@@ -1,0 +1,179 @@
+nimTitle	absytree_internal	absytree_internal.html	module absytree_internal		0
+nim	setModeScript_7113548649	absytree_internal.html#setModeScript_7113548649,TextDocumentEditor,string	proc setModeScript_7113548649(self: TextDocumentEditor; mode: string)		6
+nim	modeScript_7113548847	absytree_internal.html#modeScript_7113548847,TextDocumentEditor	proc modeScript_7113548847(self: TextDocumentEditor): string		8
+nim	getContextWithModeScript_7113548902	absytree_internal.html#getContextWithModeScript_7113548902,TextDocumentEditor,string	proc getContextWithModeScript_7113548902(self: TextDocumentEditor; context: string): string		10
+nim	updateTargetColumnScript_7113548964	absytree_internal.html#updateTargetColumnScript_7113548964,TextDocumentEditor,SelectionCursor	proc updateTargetColumnScript_7113548964(self: TextDocumentEditor;\n                                    cursor: SelectionCursor)		13
+nim	invertSelectionScript_7113549065	absytree_internal.html#invertSelectionScript_7113549065,TextDocumentEditor	proc invertSelectionScript_7113549065(self: TextDocumentEditor)		16
+nim	insertScript_7113549114	absytree_internal.html#insertScript_7113549114,TextDocumentEditor,seq[Selection],string,bool,bool,bool	proc insertScript_7113549114(self: TextDocumentEditor; selections: seq[Selection];\n                        text: string; notify: bool = true; record: bool = true;\n                        autoIndent: bool = true): seq[Selection]		18
+nim	deleteScript_7113549478	absytree_internal.html#deleteScript_7113549478,TextDocumentEditor,seq[Selection],bool,bool	proc deleteScript_7113549478(self: TextDocumentEditor; selections: seq[Selection];\n                        notify: bool = true; record: bool = true): seq[Selection]		23
+nim	selectPrevScript_7113549554	absytree_internal.html#selectPrevScript_7113549554,TextDocumentEditor	proc selectPrevScript_7113549554(self: TextDocumentEditor)		27
+nim	selectNextScript_7113549766	absytree_internal.html#selectNextScript_7113549766,TextDocumentEditor	proc selectNextScript_7113549766(self: TextDocumentEditor)		29
+nim	selectInsideScript_7113549955	absytree_internal.html#selectInsideScript_7113549955,TextDocumentEditor,Cursor	proc selectInsideScript_7113549955(self: TextDocumentEditor; cursor: Cursor)		31
+nim	selectInsideCurrentScript_7113550028	absytree_internal.html#selectInsideCurrentScript_7113550028,TextDocumentEditor	proc selectInsideCurrentScript_7113550028(self: TextDocumentEditor)		33
+nim	selectLineScript_7113550077	absytree_internal.html#selectLineScript_7113550077,TextDocumentEditor,int	proc selectLineScript_7113550077(self: TextDocumentEditor; line: int)		35
+nim	selectLineCurrentScript_7113550133	absytree_internal.html#selectLineCurrentScript_7113550133,TextDocumentEditor	proc selectLineCurrentScript_7113550133(self: TextDocumentEditor)		37
+nim	selectParentTsScript_7113550182	absytree_internal.html#selectParentTsScript_7113550182,TextDocumentEditor,Selection	proc selectParentTsScript_7113550182(self: TextDocumentEditor; selection: Selection)		39
+nim	selectParentCurrentTsScript_7113550252	absytree_internal.html#selectParentCurrentTsScript_7113550252,TextDocumentEditor	proc selectParentCurrentTsScript_7113550252(self: TextDocumentEditor)		42
+nim	insertTextScript_7113550306	absytree_internal.html#insertTextScript_7113550306,TextDocumentEditor,string	proc insertTextScript_7113550306(self: TextDocumentEditor; text: string)		44
+nim	undoScript_7113550371	absytree_internal.html#undoScript_7113550371,TextDocumentEditor	proc undoScript_7113550371(self: TextDocumentEditor)		46
+nim	redoScript_7113550468	absytree_internal.html#redoScript_7113550468,TextDocumentEditor	proc redoScript_7113550468(self: TextDocumentEditor)		48
+nim	scrollTextScript_7113550543	absytree_internal.html#scrollTextScript_7113550543,TextDocumentEditor,float32	proc scrollTextScript_7113550543(self: TextDocumentEditor; amount: float32)		50
+nim	duplicateLastSelectionScript_7113550661	absytree_internal.html#duplicateLastSelectionScript_7113550661,TextDocumentEditor	proc duplicateLastSelectionScript_7113550661(self: TextDocumentEditor)		52
+nim	addCursorBelowScript_7113550752	absytree_internal.html#addCursorBelowScript_7113550752,TextDocumentEditor	proc addCursorBelowScript_7113550752(self: TextDocumentEditor)		54
+nim	addCursorAboveScript_7113550813	absytree_internal.html#addCursorAboveScript_7113550813,TextDocumentEditor	proc addCursorAboveScript_7113550813(self: TextDocumentEditor)		56
+nim	getPrevFindResultScript_7113550874	absytree_internal.html#getPrevFindResultScript_7113550874,TextDocumentEditor,Cursor,int	proc getPrevFindResultScript_7113550874(self: TextDocumentEditor; cursor: Cursor;\n                                   offset: int = 0): Selection		58
+nim	getNextFindResultScript_7113551194	absytree_internal.html#getNextFindResultScript_7113551194,TextDocumentEditor,Cursor,int	proc getNextFindResultScript_7113551194(self: TextDocumentEditor; cursor: Cursor;\n                                   offset: int = 0): Selection		61
+nim	addNextFindResultToSelectionScript_7113551411	absytree_internal.html#addNextFindResultToSelectionScript_7113551411,TextDocumentEditor	proc addNextFindResultToSelectionScript_7113551411(self: TextDocumentEditor)		64
+nim	addPrevFindResultToSelectionScript_7113551468	absytree_internal.html#addPrevFindResultToSelectionScript_7113551468,TextDocumentEditor	proc addPrevFindResultToSelectionScript_7113551468(self: TextDocumentEditor)		66
+nim	setAllFindResultToSelectionScript_7113551525	absytree_internal.html#setAllFindResultToSelectionScript_7113551525,TextDocumentEditor	proc setAllFindResultToSelectionScript_7113551525(self: TextDocumentEditor)		68
+nim	moveCursorColumnScript_7113551886	absytree_internal.html#moveCursorColumnScript_7113551886,TextDocumentEditor,int,SelectionCursor,bool	proc moveCursorColumnScript_7113551886(self: TextDocumentEditor; distance: int;\n    cursor: SelectionCursor = SelectionCursor.Config; all: bool = true)		70
+nim	moveCursorLineScript_7113551974	absytree_internal.html#moveCursorLineScript_7113551974,TextDocumentEditor,int,SelectionCursor,bool	proc moveCursorLineScript_7113551974(self: TextDocumentEditor; distance: int; cursor: SelectionCursor = SelectionCursor.Config;\n                                all: bool = true)		73
+nim	moveCursorHomeScript_7113552044	absytree_internal.html#moveCursorHomeScript_7113552044,TextDocumentEditor,SelectionCursor,bool	proc moveCursorHomeScript_7113552044(self: TextDocumentEditor; cursor: SelectionCursor = SelectionCursor.Config;\n                                all: bool = true)		76
+nim	moveCursorEndScript_7113552107	absytree_internal.html#moveCursorEndScript_7113552107,TextDocumentEditor,SelectionCursor,bool	proc moveCursorEndScript_7113552107(self: TextDocumentEditor; cursor: SelectionCursor = SelectionCursor.Config;\n                               all: bool = true)		79
+nim	moveCursorToScript_7113552170	absytree_internal.html#moveCursorToScript_7113552170,TextDocumentEditor,string,SelectionCursor,bool	proc moveCursorToScript_7113552170(self: TextDocumentEditor; str: string;\n                              cursor: SelectionCursor = SelectionCursor.Config;\n                              all: bool = true)		82
+nim	moveCursorBeforeScript_7113552247	absytree_internal.html#moveCursorBeforeScript_7113552247,TextDocumentEditor,string,SelectionCursor,bool	proc moveCursorBeforeScript_7113552247(self: TextDocumentEditor; str: string; cursor: SelectionCursor = SelectionCursor.Config;\n                                  all: bool = true)		85
+nim	moveCursorNextFindResultScript_7113552324	absytree_internal.html#moveCursorNextFindResultScript_7113552324,TextDocumentEditor,SelectionCursor,bool	proc moveCursorNextFindResultScript_7113552324(self: TextDocumentEditor;\n    cursor: SelectionCursor = SelectionCursor.Config; all: bool = true)		88
+nim	moveCursorPrevFindResultScript_7113552387	absytree_internal.html#moveCursorPrevFindResultScript_7113552387,TextDocumentEditor,SelectionCursor,bool	proc moveCursorPrevFindResultScript_7113552387(self: TextDocumentEditor;\n    cursor: SelectionCursor = SelectionCursor.Config; all: bool = true)		91
+nim	scrollToCursorScript_7113552450	absytree_internal.html#scrollToCursorScript_7113552450,TextDocumentEditor,SelectionCursor	proc scrollToCursorScript_7113552450(self: TextDocumentEditor; cursor: SelectionCursor = SelectionCursor.Config)		94
+nim	reloadTreesitterScript_7113552506	absytree_internal.html#reloadTreesitterScript_7113552506,TextDocumentEditor	proc reloadTreesitterScript_7113552506(self: TextDocumentEditor)		96
+nim	deleteLeftScript_7113552559	absytree_internal.html#deleteLeftScript_7113552559,TextDocumentEditor	proc deleteLeftScript_7113552559(self: TextDocumentEditor)		98
+nim	deleteRightScript_7113552616	absytree_internal.html#deleteRightScript_7113552616,TextDocumentEditor	proc deleteRightScript_7113552616(self: TextDocumentEditor)		100
+nim	getCommandCountScript_7113552673	absytree_internal.html#getCommandCountScript_7113552673,TextDocumentEditor	proc getCommandCountScript_7113552673(self: TextDocumentEditor): int		102
+nim	setCommandCountScript_7113552728	absytree_internal.html#setCommandCountScript_7113552728,TextDocumentEditor,int	proc setCommandCountScript_7113552728(self: TextDocumentEditor; count: int)		104
+nim	setCommandCountRestoreScript_7113552784	absytree_internal.html#setCommandCountRestoreScript_7113552784,TextDocumentEditor,int	proc setCommandCountRestoreScript_7113552784(self: TextDocumentEditor; count: int)		106
+nim	updateCommandCountScript_7113552840	absytree_internal.html#updateCommandCountScript_7113552840,TextDocumentEditor,int	proc updateCommandCountScript_7113552840(self: TextDocumentEditor; digit: int)		109
+nim	setFlagScript_7113552896	absytree_internal.html#setFlagScript_7113552896,TextDocumentEditor,string,bool	proc setFlagScript_7113552896(self: TextDocumentEditor; name: string; value: bool)		111
+nim	getFlagScript_7113552959	absytree_internal.html#getFlagScript_7113552959,TextDocumentEditor,string	proc getFlagScript_7113552959(self: TextDocumentEditor; name: string): bool		114
+nim	runActionScript_7113553021	absytree_internal.html#runActionScript_7113553021,TextDocumentEditor,string,JsonNode	proc runActionScript_7113553021(self: TextDocumentEditor; action: string;\n                           args: JsonNode): bool		116
+nim	findWordBoundaryScript_7113553093	absytree_internal.html#findWordBoundaryScript_7113553093,TextDocumentEditor,Cursor	proc findWordBoundaryScript_7113553093(self: TextDocumentEditor; cursor: Cursor): Selection		119
+nim	getSelectionForMoveScript_7113553182	absytree_internal.html#getSelectionForMoveScript_7113553182,TextDocumentEditor,Cursor,string,int	proc getSelectionForMoveScript_7113553182(self: TextDocumentEditor; cursor: Cursor;\n                                     move: string; count: int = 0): Selection		121
+nim	setMoveScript_7113553375	absytree_internal.html#setMoveScript_7113553375,TextDocumentEditor,JsonNode	proc setMoveScript_7113553375(self: TextDocumentEditor; args: JsonNode)		124
+nim	deleteMoveScript_7113553628	absytree_internal.html#deleteMoveScript_7113553628,TextDocumentEditor,string,SelectionCursor,bool	proc deleteMoveScript_7113553628(self: TextDocumentEditor; move: string;\n                            which: SelectionCursor = SelectionCursor.Config;\n                            all: bool = true)		126
+nim	selectMoveScript_7113553728	absytree_internal.html#selectMoveScript_7113553728,TextDocumentEditor,string,SelectionCursor,bool	proc selectMoveScript_7113553728(self: TextDocumentEditor; move: string;\n                            which: SelectionCursor = SelectionCursor.Config;\n                            all: bool = true)		129
+nim	changeMoveScript_7113553853	absytree_internal.html#changeMoveScript_7113553853,TextDocumentEditor,string,SelectionCursor,bool	proc changeMoveScript_7113553853(self: TextDocumentEditor; move: string;\n                            which: SelectionCursor = SelectionCursor.Config;\n                            all: bool = true)		132
+nim	moveLastScript_7113553953	absytree_internal.html#moveLastScript_7113553953,TextDocumentEditor,string,SelectionCursor,bool,int	proc moveLastScript_7113553953(self: TextDocumentEditor; move: string;\n                          which: SelectionCursor = SelectionCursor.Config;\n                          all: bool = true; count: int = 0)		135
+nim	moveFirstScript_7113554067	absytree_internal.html#moveFirstScript_7113554067,TextDocumentEditor,string,SelectionCursor,bool,int	proc moveFirstScript_7113554067(self: TextDocumentEditor; move: string;\n                           which: SelectionCursor = SelectionCursor.Config;\n                           all: bool = true; count: int = 0)		139
+nim	setSearchQueryScript_7113554181	absytree_internal.html#setSearchQueryScript_7113554181,TextDocumentEditor,string	proc setSearchQueryScript_7113554181(self: TextDocumentEditor; query: string)		142
+nim	setSearchQueryFromMoveScript_7113554259	absytree_internal.html#setSearchQueryFromMoveScript_7113554259,TextDocumentEditor,string,int	proc setSearchQueryFromMoveScript_7113554259(self: TextDocumentEditor; move: string;\n                                        count: int = 0)		144
+nim	gotoDefinitionScript_7113555063	absytree_internal.html#gotoDefinitionScript_7113555063,TextDocumentEditor	proc gotoDefinitionScript_7113555063(self: TextDocumentEditor)		147
+nim	getCompletionsScript_7113555116	absytree_internal.html#getCompletionsScript_7113555116,TextDocumentEditor	proc getCompletionsScript_7113555116(self: TextDocumentEditor)		149
+nim	hideCompletionsScript_7113555169	absytree_internal.html#hideCompletionsScript_7113555169,TextDocumentEditor	proc hideCompletionsScript_7113555169(self: TextDocumentEditor)		151
+nim	selectPrevCompletionScript_7113555218	absytree_internal.html#selectPrevCompletionScript_7113555218,TextDocumentEditor	proc selectPrevCompletionScript_7113555218(self: TextDocumentEditor)		153
+nim	selectNextCompletionScript_7113555281	absytree_internal.html#selectNextCompletionScript_7113555281,TextDocumentEditor	proc selectNextCompletionScript_7113555281(self: TextDocumentEditor)		155
+nim	applySelectedCompletionScript_7113555344	absytree_internal.html#applySelectedCompletionScript_7113555344,TextDocumentEditor	proc applySelectedCompletionScript_7113555344(self: TextDocumentEditor)		157
+nim	moveCursorScript_7902080281	absytree_internal.html#moveCursorScript_7902080281,AstDocumentEditor,int	proc moveCursorScript_7902080281(self: AstDocumentEditor; direction: int)		159
+nim	moveCursorUpScript_7902080383	absytree_internal.html#moveCursorUpScript_7902080383,AstDocumentEditor	proc moveCursorUpScript_7902080383(self: AstDocumentEditor)		161
+nim	moveCursorDownScript_7902080444	absytree_internal.html#moveCursorDownScript_7902080444,AstDocumentEditor	proc moveCursorDownScript_7902080444(self: AstDocumentEditor)		163
+nim	moveCursorNextScript_7902080493	absytree_internal.html#moveCursorNextScript_7902080493,AstDocumentEditor	proc moveCursorNextScript_7902080493(self: AstDocumentEditor)		165
+nim	moveCursorPrevScript_7902080549	absytree_internal.html#moveCursorPrevScript_7902080549,AstDocumentEditor	proc moveCursorPrevScript_7902080549(self: AstDocumentEditor)		167
+nim	moveCursorNextLineScript_7902080604	absytree_internal.html#moveCursorNextLineScript_7902080604,AstDocumentEditor	proc moveCursorNextLineScript_7902080604(self: AstDocumentEditor)		169
+nim	moveCursorPrevLineScript_7902080679	absytree_internal.html#moveCursorPrevLineScript_7902080679,AstDocumentEditor	proc moveCursorPrevLineScript_7902080679(self: AstDocumentEditor)		171
+nim	selectContainingScript_7902080754	absytree_internal.html#selectContainingScript_7902080754,AstDocumentEditor,string	proc selectContainingScript_7902080754(self: AstDocumentEditor; container: string)		173
+nim	deleteSelectedScript_7902080966	absytree_internal.html#deleteSelectedScript_7902080966,AstDocumentEditor	proc deleteSelectedScript_7902080966(self: AstDocumentEditor)		176
+nim	copySelectedScript_7902081018	absytree_internal.html#copySelectedScript_7902081018,AstDocumentEditor	proc copySelectedScript_7902081018(self: AstDocumentEditor)		178
+nim	finishEditScript_7902081070	absytree_internal.html#finishEditScript_7902081070,AstDocumentEditor,bool	proc finishEditScript_7902081070(self: AstDocumentEditor; apply: bool)		180
+nim	undoScript2_7902081168	absytree_internal.html#undoScript2_7902081168,AstDocumentEditor	proc undoScript2_7902081168(self: AstDocumentEditor)		182
+nim	redoScript2_7902081243	absytree_internal.html#redoScript2_7902081243,AstDocumentEditor	proc redoScript2_7902081243(self: AstDocumentEditor)		184
+nim	insertAfterSmartScript_7902081318	absytree_internal.html#insertAfterSmartScript_7902081318,AstDocumentEditor,string	proc insertAfterSmartScript_7902081318(self: AstDocumentEditor; nodeTemplate: string)		186
+nim	insertAfterScript_7902081491	absytree_internal.html#insertAfterScript_7902081491,AstDocumentEditor,string	proc insertAfterScript_7902081491(self: AstDocumentEditor; nodeTemplate: string)		189
+nim	insertBeforeScript_7902081632	absytree_internal.html#insertBeforeScript_7902081632,AstDocumentEditor,string	proc insertBeforeScript_7902081632(self: AstDocumentEditor; nodeTemplate: string)		191
+nim	insertChildScript_7902081772	absytree_internal.html#insertChildScript_7902081772,AstDocumentEditor,string	proc insertChildScript_7902081772(self: AstDocumentEditor; nodeTemplate: string)		193
+nim	replaceScript_7902081911	absytree_internal.html#replaceScript_7902081911,AstDocumentEditor,string	proc replaceScript_7902081911(self: AstDocumentEditor; nodeTemplate: string)		195
+nim	replaceEmptyScript_7902082004	absytree_internal.html#replaceEmptyScript_7902082004,AstDocumentEditor,string	proc replaceEmptyScript_7902082004(self: AstDocumentEditor; nodeTemplate: string)		197
+nim	replaceParentScript_7902082101	absytree_internal.html#replaceParentScript_7902082101,AstDocumentEditor	proc replaceParentScript_7902082101(self: AstDocumentEditor)		199
+nim	wrapScript_7902082160	absytree_internal.html#wrapScript_7902082160,AstDocumentEditor,string	proc wrapScript_7902082160(self: AstDocumentEditor; nodeTemplate: string)		201
+nim	editPrevEmptyScript_7902082277	absytree_internal.html#editPrevEmptyScript_7902082277,AstDocumentEditor	proc editPrevEmptyScript_7902082277(self: AstDocumentEditor)		203
+nim	editNextEmptyScript_7902082332	absytree_internal.html#editNextEmptyScript_7902082332,AstDocumentEditor	proc editNextEmptyScript_7902082332(self: AstDocumentEditor)		205
+nim	renameScript_7902082395	absytree_internal.html#renameScript_7902082395,AstDocumentEditor	proc renameScript_7902082395(self: AstDocumentEditor)		207
+nim	selectPrevCompletionScript2_7902082444	absytree_internal.html#selectPrevCompletionScript2_7902082444,AstDocumentEditor	proc selectPrevCompletionScript2_7902082444(self: AstDocumentEditor)		209
+nim	selectNextCompletionScript2_7902082504	absytree_internal.html#selectNextCompletionScript2_7902082504,AstDocumentEditor	proc selectNextCompletionScript2_7902082504(editor: AstDocumentEditor)		211
+nim	applySelectedCompletionScript2_7902082564	absytree_internal.html#applySelectedCompletionScript2_7902082564,AstDocumentEditor	proc applySelectedCompletionScript2_7902082564(editor: AstDocumentEditor)		213
+nim	cancelAndNextCompletionScript_7902082726	absytree_internal.html#cancelAndNextCompletionScript_7902082726,AstDocumentEditor	proc cancelAndNextCompletionScript_7902082726(self: AstDocumentEditor)		215
+nim	cancelAndPrevCompletionScript_7902082775	absytree_internal.html#cancelAndPrevCompletionScript_7902082775,AstDocumentEditor	proc cancelAndPrevCompletionScript_7902082775(self: AstDocumentEditor)		217
+nim	cancelAndDeleteScript_7902082824	absytree_internal.html#cancelAndDeleteScript_7902082824,AstDocumentEditor	proc cancelAndDeleteScript_7902082824(self: AstDocumentEditor)		219
+nim	moveNodeToPrevSpaceScript_7902082876	absytree_internal.html#moveNodeToPrevSpaceScript_7902082876,AstDocumentEditor	proc moveNodeToPrevSpaceScript_7902082876(self: AstDocumentEditor)		221
+nim	moveNodeToNextSpaceScript_7902083029	absytree_internal.html#moveNodeToNextSpaceScript_7902083029,AstDocumentEditor	proc moveNodeToNextSpaceScript_7902083029(self: AstDocumentEditor)		223
+nim	selectPrevScript2_7902083183	absytree_internal.html#selectPrevScript2_7902083183,AstDocumentEditor	proc selectPrevScript2_7902083183(self: AstDocumentEditor)		225
+nim	selectNextScript2_7902083232	absytree_internal.html#selectNextScript2_7902083232,AstDocumentEditor	proc selectNextScript2_7902083232(self: AstDocumentEditor)		227
+nim	gotoScript_7902083281	absytree_internal.html#gotoScript_7902083281,AstDocumentEditor,string	proc gotoScript_7902083281(self: AstDocumentEditor; where: string)		229
+nim	runSelectedFunctionScript_7902084116	absytree_internal.html#runSelectedFunctionScript_7902084116,AstDocumentEditor	proc runSelectedFunctionScript_7902084116(self: AstDocumentEditor)		231
+nim	toggleOptionScript_7902084384	absytree_internal.html#toggleOptionScript_7902084384,AstDocumentEditor,string	proc toggleOptionScript_7902084384(self: AstDocumentEditor; name: string)		233
+nim	runLastCommandScript_7902084444	absytree_internal.html#runLastCommandScript_7902084444,AstDocumentEditor,string	proc runLastCommandScript_7902084444(self: AstDocumentEditor; which: string)		235
+nim	selectCenterNodeScript_7902084500	absytree_internal.html#selectCenterNodeScript_7902084500,AstDocumentEditor	proc selectCenterNodeScript_7902084500(self: AstDocumentEditor)		237
+nim	scrollScript_7902084956	absytree_internal.html#scrollScript_7902084956,AstDocumentEditor,float32	proc scrollScript_7902084956(self: AstDocumentEditor; amount: float32)		239
+nim	scrollOutputScript_7902085016	absytree_internal.html#scrollOutputScript_7902085016,AstDocumentEditor,string	proc scrollOutputScript_7902085016(self: AstDocumentEditor; arg: string)		241
+nim	dumpContextScript_7902085083	absytree_internal.html#dumpContextScript_7902085083,AstDocumentEditor	proc dumpContextScript_7902085083(self: AstDocumentEditor)		243
+nim	setModeScript2_7902085136	absytree_internal.html#setModeScript2_7902085136,AstDocumentEditor,string	proc setModeScript2_7902085136(self: AstDocumentEditor; mode: string)		245
+nim	modeScript2_7902085224	absytree_internal.html#modeScript2_7902085224,AstDocumentEditor	proc modeScript2_7902085224(self: AstDocumentEditor): string		247
+nim	getContextWithModeScript2_7902085279	absytree_internal.html#getContextWithModeScript2_7902085279,AstDocumentEditor,string	proc getContextWithModeScript2_7902085279(self: AstDocumentEditor; context: string): string		249
+nim	acceptScript_8170504455	absytree_internal.html#acceptScript_8170504455,SelectorPopup	proc acceptScript_8170504455(self: SelectorPopup)		252
+nim	cancelScript_8170504553	absytree_internal.html#cancelScript_8170504553,SelectorPopup	proc cancelScript_8170504553(self: SelectorPopup)		254
+nim	prevScript_8170504608	absytree_internal.html#prevScript_8170504608,SelectorPopup	proc prevScript_8170504608(self: SelectorPopup)		256
+nim	nextScript_8170504675	absytree_internal.html#nextScript_8170504675,SelectorPopup	proc nextScript_8170504675(self: SelectorPopup)		258
+nim	getBackendScript_2197823911	absytree_internal.html#getBackendScript_2197823911	proc getBackendScript_2197823911(): Backend		260
+nim	requestRenderScript_2197824076	absytree_internal.html#requestRenderScript_2197824076	proc requestRenderScript_2197824076()		262
+nim	setHandleInputsScript_2197824119	absytree_internal.html#setHandleInputsScript_2197824119,string,bool	proc setHandleInputsScript_2197824119(context: string; value: bool)		264
+nim	setHandleActionsScript_2197824176	absytree_internal.html#setHandleActionsScript_2197824176,string,bool	proc setHandleActionsScript_2197824176(context: string; value: bool)		266
+nim	setConsumeAllActionsScript_2197824233	absytree_internal.html#setConsumeAllActionsScript_2197824233,string,bool	proc setConsumeAllActionsScript_2197824233(context: string; value: bool)		268
+nim	setConsumeAllInputScript_2197824290	absytree_internal.html#setConsumeAllInputScript_2197824290,string,bool	proc setConsumeAllInputScript_2197824290(context: string; value: bool)		270
+nim	getFlagScript2_2197824347	absytree_internal.html#getFlagScript2_2197824347,string,bool	proc getFlagScript2_2197824347(flag: string; default: bool = false): bool		272
+nim	setFlagScript2_2197824419	absytree_internal.html#setFlagScript2_2197824419,string,bool	proc setFlagScript2_2197824419(flag: string; value: bool)		274
+nim	toggleFlagScript_2197824531	absytree_internal.html#toggleFlagScript_2197824531,string	proc toggleFlagScript_2197824531(flag: string)		276
+nim	setOptionScript_2197824581	absytree_internal.html#setOptionScript_2197824581,string,JsonNode	proc setOptionScript_2197824581(option: string; value: JsonNode)		278
+nim	quitScript_2197824672	absytree_internal.html#quitScript_2197824672	proc quitScript_2197824672()		280
+nim	changeFontSizeScript_2197824715	absytree_internal.html#changeFontSizeScript_2197824715,float32	proc changeFontSizeScript_2197824715(amount: float32)		282
+nim	changeLayoutPropScript_2197824765	absytree_internal.html#changeLayoutPropScript_2197824765,string,float32	proc changeLayoutPropScript_2197824765(prop: string; change: float32)		284
+nim	toggleStatusBarLocationScript_2197825071	absytree_internal.html#toggleStatusBarLocationScript_2197825071	proc toggleStatusBarLocationScript_2197825071()		286
+nim	createViewScript_2197825114	absytree_internal.html#createViewScript_2197825114	proc createViewScript_2197825114()		288
+nim	closeCurrentViewScript_2197825161	absytree_internal.html#closeCurrentViewScript_2197825161	proc closeCurrentViewScript_2197825161()		290
+nim	moveCurrentViewToTopScript_2197825249	absytree_internal.html#moveCurrentViewToTopScript_2197825249	proc moveCurrentViewToTopScript_2197825249()		292
+nim	nextViewScript_2197825343	absytree_internal.html#nextViewScript_2197825343	proc nextViewScript_2197825343()		294
+nim	prevViewScript_2197825392	absytree_internal.html#prevViewScript_2197825392	proc prevViewScript_2197825392()		296
+nim	moveCurrentViewPrevScript_2197825444	absytree_internal.html#moveCurrentViewPrevScript_2197825444	proc moveCurrentViewPrevScript_2197825444()		298
+nim	moveCurrentViewNextScript_2197825510	absytree_internal.html#moveCurrentViewNextScript_2197825510	proc moveCurrentViewNextScript_2197825510()		300
+nim	setLayoutScript_2197825573	absytree_internal.html#setLayoutScript_2197825573,string	proc setLayoutScript_2197825573(layout: string)		302
+nim	commandLineScript_2197825659	absytree_internal.html#commandLineScript_2197825659,string	proc commandLineScript_2197825659(initialValue: string = "")		304
+nim	exitCommandLineScript_2197825713	absytree_internal.html#exitCommandLineScript_2197825713	proc exitCommandLineScript_2197825713()		306
+nim	executeCommandLineScript_2197825760	absytree_internal.html#executeCommandLineScript_2197825760	proc executeCommandLineScript_2197825760(): bool		308
+nim	openFileScript_2197825815	absytree_internal.html#openFileScript_2197825815,string	proc openFileScript_2197825815(path: string)		310
+nim	writeFileScript_2197825907	absytree_internal.html#writeFileScript_2197825907,string	proc writeFileScript_2197825907(path: string = "")		312
+nim	loadFileScript_2197825969	absytree_internal.html#loadFileScript_2197825969,string	proc loadFileScript_2197825969(path: string = "")		314
+nim	loadThemeScript_2197826031	absytree_internal.html#loadThemeScript_2197826031,string	proc loadThemeScript_2197826031(name: string)		316
+nim	chooseThemeScript_2197826117	absytree_internal.html#chooseThemeScript_2197826117	proc chooseThemeScript_2197826117()		318
+nim	chooseFileScript_2197826438	absytree_internal.html#chooseFileScript_2197826438,string	proc chooseFileScript_2197826438(view: string = "new")		320
+nim	reloadConfigScript_2197826568	absytree_internal.html#reloadConfigScript_2197826568	proc reloadConfigScript_2197826568()		322
+nim	logOptionsScript_2197826652	absytree_internal.html#logOptionsScript_2197826652	proc logOptionsScript_2197826652()		324
+nim	clearCommandsScript_2197826695	absytree_internal.html#clearCommandsScript_2197826695,string	proc clearCommandsScript_2197826695(context: string)		326
+nim	getAllEditorsScript_2197826745	absytree_internal.html#getAllEditorsScript_2197826745	proc getAllEditorsScript_2197826745(): seq[EditorId]		328
+nim	setModeScript22_2197827035	absytree_internal.html#setModeScript22_2197827035,string	proc setModeScript22_2197827035(mode: string)		330
+nim	modeScript22_2197827117	absytree_internal.html#modeScript22_2197827117	proc modeScript22_2197827117(): string		332
+nim	getContextWithModeScript22_2197827166	absytree_internal.html#getContextWithModeScript22_2197827166,string	proc getContextWithModeScript22_2197827166(context: string): string		334
+nim	scriptRunActionScript_2197827440	absytree_internal.html#scriptRunActionScript_2197827440,string,string	proc scriptRunActionScript_2197827440(action: string; arg: string)		336
+nim	scriptLogScript_2197827475	absytree_internal.html#scriptLogScript_2197827475,string	proc scriptLogScript_2197827475(message: string)		338
+nim	scriptAddCommandScript_2197827505	absytree_internal.html#scriptAddCommandScript_2197827505,string,string,string,string	proc scriptAddCommandScript_2197827505(context: string; keys: string; action: string;\n                                  arg: string = "")		340
+nim	removeCommandScript_2197827555	absytree_internal.html#removeCommandScript_2197827555,string,string	proc removeCommandScript_2197827555(context: string; keys: string)		343
+nim	getActivePopupScript_2197827590	absytree_internal.html#getActivePopupScript_2197827590	proc getActivePopupScript_2197827590(): EditorId		345
+nim	getActiveEditorScript_2197827626	absytree_internal.html#getActiveEditorScript_2197827626	proc getActiveEditorScript_2197827626(): EditorId		347
+nim	getActiveEditor2Script_2197827656	absytree_internal.html#getActiveEditor2Script_2197827656	proc getActiveEditor2Script_2197827656(): EditorId		349
+nim	loadCurrentConfigScript_2197827705	absytree_internal.html#loadCurrentConfigScript_2197827705	proc loadCurrentConfigScript_2197827705()		351
+nim	sourceCurrentDocumentScript_2197827748	absytree_internal.html#sourceCurrentDocumentScript_2197827748	proc sourceCurrentDocumentScript_2197827748()		353
+nim	getEditorScript_2197827791	absytree_internal.html#getEditorScript_2197827791,int	proc getEditorScript_2197827791(index: int): EditorId		355
+nim	scriptIsTextEditorScript_2197827828	absytree_internal.html#scriptIsTextEditorScript_2197827828,EditorId	proc scriptIsTextEditorScript_2197827828(editorId: EditorId): bool		357
+nim	scriptIsAstEditorScript_2197827894	absytree_internal.html#scriptIsAstEditorScript_2197827894,EditorId	proc scriptIsAstEditorScript_2197827894(editorId: EditorId): bool		359
+nim	scriptRunActionForScript_2197827960	absytree_internal.html#scriptRunActionForScript_2197827960,EditorId,string,string	proc scriptRunActionForScript_2197827960(editorId: EditorId; action: string;\n                                    arg: string)		361
+nim	scriptInsertTextIntoScript_2197828058	absytree_internal.html#scriptInsertTextIntoScript_2197828058,EditorId,string	proc scriptInsertTextIntoScript_2197828058(editorId: EditorId; text: string)		364
+nim	scriptTextEditorSelectionScript_2197828121	absytree_internal.html#scriptTextEditorSelectionScript_2197828121,EditorId	proc scriptTextEditorSelectionScript_2197828121(editorId: EditorId): Selection		366
+nim	scriptSetTextEditorSelectionScript_2197828188	absytree_internal.html#scriptSetTextEditorSelectionScript_2197828188,EditorId,Selection	proc scriptSetTextEditorSelectionScript_2197828188(editorId: EditorId;\n    selection: Selection)		368
+nim	scriptTextEditorSelectionsScript_2197828255	absytree_internal.html#scriptTextEditorSelectionsScript_2197828255,EditorId	proc scriptTextEditorSelectionsScript_2197828255(editorId: EditorId): seq[Selection]		371
+nim	scriptSetTextEditorSelectionsScript_2197828330	absytree_internal.html#scriptSetTextEditorSelectionsScript_2197828330,EditorId,seq[Selection]	proc scriptSetTextEditorSelectionsScript_2197828330(editorId: EditorId;\n    selections: seq[Selection])		374
+nim	scriptGetTextEditorLineScript_2197828397	absytree_internal.html#scriptGetTextEditorLineScript_2197828397,EditorId,int	proc scriptGetTextEditorLineScript_2197828397(editorId: EditorId; line: int): string		377
+nim	scriptGetTextEditorLineCountScript_2197828474	absytree_internal.html#scriptGetTextEditorLineCountScript_2197828474,EditorId	proc scriptGetTextEditorLineCountScript_2197828474(editorId: EditorId): int		379
+nim	scriptGetOptionIntScript_2197828555	absytree_internal.html#scriptGetOptionIntScript_2197828555,string,int	proc scriptGetOptionIntScript_2197828555(path: string; default: int): int		381
+nim	scriptGetOptionFloatScript_2197828601	absytree_internal.html#scriptGetOptionFloatScript_2197828601,string,float	proc scriptGetOptionFloatScript_2197828601(path: string; default: float): float		383
+nim	scriptGetOptionBoolScript_2197828712	absytree_internal.html#scriptGetOptionBoolScript_2197828712,string,bool	proc scriptGetOptionBoolScript_2197828712(path: string; default: bool): bool		385
+nim	scriptGetOptionStringScript_2197828758	absytree_internal.html#scriptGetOptionStringScript_2197828758,string,string	proc scriptGetOptionStringScript_2197828758(path: string; default: string): string		387
+nim	scriptSetOptionIntScript_2197828804	absytree_internal.html#scriptSetOptionIntScript_2197828804,string,int	proc scriptSetOptionIntScript_2197828804(path: string; value: int)		389
+nim	scriptSetOptionFloatScript_2197828878	absytree_internal.html#scriptSetOptionFloatScript_2197828878,string,float	proc scriptSetOptionFloatScript_2197828878(path: string; value: float)		391
+nim	scriptSetOptionBoolScript_2197828952	absytree_internal.html#scriptSetOptionBoolScript_2197828952,string,bool	proc scriptSetOptionBoolScript_2197828952(path: string; value: bool)		393
+nim	scriptSetOptionStringScript_2197829026	absytree_internal.html#scriptSetOptionStringScript_2197829026,string,string	proc scriptSetOptionStringScript_2197829026(path: string; value: string)		395
+nim	scriptSetCallbackScript_2197829100	absytree_internal.html#scriptSetCallbackScript_2197829100,string,int	proc scriptSetCallbackScript_2197829100(path: string; id: int)		397

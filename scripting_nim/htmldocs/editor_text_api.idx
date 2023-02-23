@@ -1,0 +1,63 @@
+nimTitle	editor_text_api	editor_text_api.html	module editor_text_api		0
+nim	setMode	editor_text_api.html#setMode,TextDocumentEditor,string	proc setMode(self: TextDocumentEditor; mode: string)		7
+nim	mode	editor_text_api.html#mode,TextDocumentEditor	proc mode(self: TextDocumentEditor): string		12
+nim	getContextWithMode	editor_text_api.html#getContextWithMode,TextDocumentEditor,string	proc getContextWithMode(self: TextDocumentEditor; context: string): string		15
+nim	updateTargetColumn	editor_text_api.html#updateTargetColumn,TextDocumentEditor,SelectionCursor	proc updateTargetColumn(self: TextDocumentEditor; cursor: SelectionCursor)		18
+nim	invertSelection	editor_text_api.html#invertSelection,TextDocumentEditor	proc invertSelection(self: TextDocumentEditor)		20
+nim	insert	editor_text_api.html#insert,TextDocumentEditor,seq[Selection],string,bool,bool,bool	proc insert(self: TextDocumentEditor; selections: seq[Selection]; text: string;\n       notify: bool = true; record: bool = true; autoIndent: bool = true): seq[\n    Selection]		23
+nim	delete	editor_text_api.html#delete,TextDocumentEditor,seq[Selection],bool,bool	proc delete(self: TextDocumentEditor; selections: seq[Selection];\n       notify: bool = true; record: bool = true): seq[Selection]		27
+nim	selectPrev	editor_text_api.html#selectPrev,TextDocumentEditor	proc selectPrev(self: TextDocumentEditor)		30
+nim	selectNext	editor_text_api.html#selectNext,TextDocumentEditor	proc selectNext(self: TextDocumentEditor)		32
+nim	selectInside	editor_text_api.html#selectInside,TextDocumentEditor,Cursor	proc selectInside(self: TextDocumentEditor; cursor: Cursor)		34
+nim	selectInsideCurrent	editor_text_api.html#selectInsideCurrent,TextDocumentEditor	proc selectInsideCurrent(self: TextDocumentEditor)		36
+nim	selectLine	editor_text_api.html#selectLine,TextDocumentEditor,int	proc selectLine(self: TextDocumentEditor; line: int)		38
+nim	selectLineCurrent	editor_text_api.html#selectLineCurrent,TextDocumentEditor	proc selectLineCurrent(self: TextDocumentEditor)		40
+nim	selectParentTs	editor_text_api.html#selectParentTs,TextDocumentEditor,Selection	proc selectParentTs(self: TextDocumentEditor; selection: Selection)		42
+nim	selectParentCurrentTs	editor_text_api.html#selectParentCurrentTs,TextDocumentEditor	proc selectParentCurrentTs(self: TextDocumentEditor)		44
+nim	insertText	editor_text_api.html#insertText,TextDocumentEditor,string	proc insertText(self: TextDocumentEditor; text: string)		46
+nim	undo	editor_text_api.html#undo,TextDocumentEditor	proc undo(self: TextDocumentEditor)		48
+nim	redo	editor_text_api.html#redo,TextDocumentEditor	proc redo(self: TextDocumentEditor)		50
+nim	scrollText	editor_text_api.html#scrollText,TextDocumentEditor,float32	proc scrollText(self: TextDocumentEditor; amount: float32)		52
+nim	duplicateLastSelection	editor_text_api.html#duplicateLastSelection,TextDocumentEditor	proc duplicateLastSelection(self: TextDocumentEditor)		54
+nim	addCursorBelow	editor_text_api.html#addCursorBelow,TextDocumentEditor	proc addCursorBelow(self: TextDocumentEditor)		56
+nim	addCursorAbove	editor_text_api.html#addCursorAbove,TextDocumentEditor	proc addCursorAbove(self: TextDocumentEditor)		58
+nim	getPrevFindResult	editor_text_api.html#getPrevFindResult,TextDocumentEditor,Cursor,int	proc getPrevFindResult(self: TextDocumentEditor; cursor: Cursor; offset: int = 0): Selection		60
+nim	getNextFindResult	editor_text_api.html#getNextFindResult,TextDocumentEditor,Cursor,int	proc getNextFindResult(self: TextDocumentEditor; cursor: Cursor; offset: int = 0): Selection		63
+nim	addNextFindResultToSelection	editor_text_api.html#addNextFindResultToSelection,TextDocumentEditor	proc addNextFindResultToSelection(self: TextDocumentEditor)		66
+nim	addPrevFindResultToSelection	editor_text_api.html#addPrevFindResultToSelection,TextDocumentEditor	proc addPrevFindResultToSelection(self: TextDocumentEditor)		68
+nim	setAllFindResultToSelection	editor_text_api.html#setAllFindResultToSelection,TextDocumentEditor	proc setAllFindResultToSelection(self: TextDocumentEditor)		70
+nim	moveCursorColumn	editor_text_api.html#moveCursorColumn,TextDocumentEditor,int,SelectionCursor,bool	proc moveCursorColumn(self: TextDocumentEditor; distance: int;\n                 cursor: SelectionCursor = SelectionCursor.Config;\n                 all: bool = true)		72
+nim	moveCursorLine	editor_text_api.html#moveCursorLine,TextDocumentEditor,int,SelectionCursor,bool	proc moveCursorLine(self: TextDocumentEditor; distance: int;\n               cursor: SelectionCursor = SelectionCursor.Config;\n               all: bool = true)		76
+nim	moveCursorHome	editor_text_api.html#moveCursorHome,TextDocumentEditor,SelectionCursor,bool	proc moveCursorHome(self: TextDocumentEditor;\n               cursor: SelectionCursor = SelectionCursor.Config;\n               all: bool = true)		80
+nim	moveCursorEnd	editor_text_api.html#moveCursorEnd,TextDocumentEditor,SelectionCursor,bool	proc moveCursorEnd(self: TextDocumentEditor;\n              cursor: SelectionCursor = SelectionCursor.Config; all: bool = true)		84
+nim	moveCursorTo	editor_text_api.html#moveCursorTo,TextDocumentEditor,string,SelectionCursor,bool	proc moveCursorTo(self: TextDocumentEditor; str: string;\n             cursor: SelectionCursor = SelectionCursor.Config; all: bool = true)		88
+nim	moveCursorBefore	editor_text_api.html#moveCursorBefore,TextDocumentEditor,string,SelectionCursor,bool	proc moveCursorBefore(self: TextDocumentEditor; str: string;\n                 cursor: SelectionCursor = SelectionCursor.Config;\n                 all: bool = true)		92
+nim	moveCursorNextFindResult	editor_text_api.html#moveCursorNextFindResult,TextDocumentEditor,SelectionCursor,bool	proc moveCursorNextFindResult(self: TextDocumentEditor;\n                         cursor: SelectionCursor = SelectionCursor.Config;\n                         all: bool = true)		96
+nim	moveCursorPrevFindResult	editor_text_api.html#moveCursorPrevFindResult,TextDocumentEditor,SelectionCursor,bool	proc moveCursorPrevFindResult(self: TextDocumentEditor;\n                         cursor: SelectionCursor = SelectionCursor.Config;\n                         all: bool = true)		99
+nim	scrollToCursor	editor_text_api.html#scrollToCursor,TextDocumentEditor,SelectionCursor	proc scrollToCursor(self: TextDocumentEditor;\n               cursor: SelectionCursor = SelectionCursor.Config)		102
+nim	reloadTreesitter	editor_text_api.html#reloadTreesitter,TextDocumentEditor	proc reloadTreesitter(self: TextDocumentEditor)		105
+nim	deleteLeft	editor_text_api.html#deleteLeft,TextDocumentEditor	proc deleteLeft(self: TextDocumentEditor)		107
+nim	deleteRight	editor_text_api.html#deleteRight,TextDocumentEditor	proc deleteRight(self: TextDocumentEditor)		109
+nim	getCommandCount	editor_text_api.html#getCommandCount,TextDocumentEditor	proc getCommandCount(self: TextDocumentEditor): int		111
+nim	setCommandCount	editor_text_api.html#setCommandCount,TextDocumentEditor,int	proc setCommandCount(self: TextDocumentEditor; count: int)		113
+nim	setCommandCountRestore	editor_text_api.html#setCommandCountRestore,TextDocumentEditor,int	proc setCommandCountRestore(self: TextDocumentEditor; count: int)		115
+nim	updateCommandCount	editor_text_api.html#updateCommandCount,TextDocumentEditor,int	proc updateCommandCount(self: TextDocumentEditor; digit: int)		117
+nim	setFlag	editor_text_api.html#setFlag,TextDocumentEditor,string,bool	proc setFlag(self: TextDocumentEditor; name: string; value: bool)		119
+nim	getFlag	editor_text_api.html#getFlag,TextDocumentEditor,string	proc getFlag(self: TextDocumentEditor; name: string): bool		121
+nim	runAction	editor_text_api.html#runAction,TextDocumentEditor,string,JsonNode	proc runAction(self: TextDocumentEditor; action: string; args: JsonNode): bool		123
+nim	findWordBoundary	editor_text_api.html#findWordBoundary,TextDocumentEditor,Cursor	proc findWordBoundary(self: TextDocumentEditor; cursor: Cursor): Selection		125
+nim	getSelectionForMove	editor_text_api.html#getSelectionForMove,TextDocumentEditor,Cursor,string,int	proc getSelectionForMove(self: TextDocumentEditor; cursor: Cursor; move: string;\n                    count: int = 0): Selection		127
+nim	setMove	editor_text_api.html#setMove,TextDocumentEditor,JsonNode	proc setMove(self: TextDocumentEditor; args: JsonNode)		130
+nim	deleteMove	editor_text_api.html#deleteMove,TextDocumentEditor,string,SelectionCursor,bool	proc deleteMove(self: TextDocumentEditor; move: string;\n           which: SelectionCursor = SelectionCursor.Config; all: bool = true)		132
+nim	selectMove	editor_text_api.html#selectMove,TextDocumentEditor,string,SelectionCursor,bool	proc selectMove(self: TextDocumentEditor; move: string;\n           which: SelectionCursor = SelectionCursor.Config; all: bool = true)		136
+nim	changeMove	editor_text_api.html#changeMove,TextDocumentEditor,string,SelectionCursor,bool	proc changeMove(self: TextDocumentEditor; move: string;\n           which: SelectionCursor = SelectionCursor.Config; all: bool = true)		140
+nim	moveLast	editor_text_api.html#moveLast,TextDocumentEditor,string,SelectionCursor,bool,int	proc moveLast(self: TextDocumentEditor; move: string;\n         which: SelectionCursor = SelectionCursor.Config; all: bool = true;\n         count: int = 0)		144
+nim	moveFirst	editor_text_api.html#moveFirst,TextDocumentEditor,string,SelectionCursor,bool,int	proc moveFirst(self: TextDocumentEditor; move: string;\n          which: SelectionCursor = SelectionCursor.Config; all: bool = true;\n          count: int = 0)		148
+nim	setSearchQuery	editor_text_api.html#setSearchQuery,TextDocumentEditor,string	proc setSearchQuery(self: TextDocumentEditor; query: string)		152
+nim	setSearchQueryFromMove	editor_text_api.html#setSearchQueryFromMove,TextDocumentEditor,string,int	proc setSearchQueryFromMove(self: TextDocumentEditor; move: string; count: int = 0)		154
+nim	gotoDefinition	editor_text_api.html#gotoDefinition,TextDocumentEditor	proc gotoDefinition(self: TextDocumentEditor)		157
+nim	getCompletions	editor_text_api.html#getCompletions,TextDocumentEditor	proc getCompletions(self: TextDocumentEditor)		159
+nim	hideCompletions	editor_text_api.html#hideCompletions,TextDocumentEditor	proc hideCompletions(self: TextDocumentEditor)		161
+nim	selectPrevCompletion	editor_text_api.html#selectPrevCompletion,TextDocumentEditor	proc selectPrevCompletion(self: TextDocumentEditor)		163
+nim	selectNextCompletion	editor_text_api.html#selectNextCompletion,TextDocumentEditor	proc selectNextCompletion(self: TextDocumentEditor)		165
+nim	applySelectedCompletion	editor_text_api.html#applySelectedCompletion,TextDocumentEditor	proc applySelectedCompletion(self: TextDocumentEditor)		167

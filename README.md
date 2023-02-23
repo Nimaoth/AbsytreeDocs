@@ -1,2 +1,2 @@
 # AbsytreeDocs
-Documentation for Absytree
+[Documentation](scripting_nim/htmldocs/theindex.html) for Absytree
