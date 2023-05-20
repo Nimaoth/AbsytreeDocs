@@ -54,7 +54,11 @@
   <details open>
     <summary><a class="reference reference-toplevel" href="#12" id="62">Procs</a></summary>
     <ul class="simple simple-toc-section">
-      <ul class="simple nested-toc-section">changeFontSize
+      <ul class="simple nested-toc-section">addCommandScript
+  <li><a class="reference" href="#addCommandScript%2Cstring%2Cstring%2Cstring%2Cstring" title="addCommandScript(context: string; keys: string; action: string; arg: string = &quot;&quot;)">addCommandScript(context: string; keys: string; action: string; arg: string = &quot;&quot;)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">changeFontSize
   <li><a class="reference" href="#changeFontSize%2Cfloat32" title="changeFontSize(amount: float32)">changeFontSize(amount: float32)</a></li>
 
 </ul>
@@ -72,6 +76,10 @@
 </ul>
 <ul class="simple nested-toc-section">clearCommands
   <li><a class="reference" href="#clearCommands%2Cstring" title="clearCommands(context: string)">clearCommands(context: string)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">clearWorkspaceCaches
+  <li><a class="reference" href="#clearWorkspaceCaches" title="clearWorkspaceCaches()">clearWorkspaceCaches()</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">closeCurrentView
@@ -162,8 +170,20 @@
   <li><a class="reference" href="#nextView" title="nextView()">nextView()</a></li>
 
 </ul>
+<ul class="simple nested-toc-section">openAbsytreeServerWorkspace
+  <li><a class="reference" href="#openAbsytreeServerWorkspace%2Cstring" title="openAbsytreeServerWorkspace(url: string)">openAbsytreeServerWorkspace(url: string)</a></li>
+
+</ul>
 <ul class="simple nested-toc-section">openFile
-  <li><a class="reference" href="#openFile%2Cstring" title="openFile(path: string)">openFile(path: string)</a></li>
+  <li><a class="reference" href="#openFile%2Cstring%2Cbool" title="openFile(path: string; app: bool = false)">openFile(path: string; app: bool = false)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">openGithubWorkspace
+  <li><a class="reference" href="#openGithubWorkspace%2Cstring%2Cstring%2Cstring" title="openGithubWorkspace(user: string; repository: string; branchOrHash: string)">openGithubWorkspace(user: string; repository: string; branchOrHash: string)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">openLocalWorkspace
+  <li><a class="reference" href="#openLocalWorkspace%2Cstring" title="openLocalWorkspace(path: string)">openLocalWorkspace(path: string)</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">prevView
@@ -182,12 +202,16 @@
   <li><a class="reference" href="#removeCommand%2Cstring%2Cstring" title="removeCommand(context: string; keys: string)">removeCommand(context: string; keys: string)</a></li>
 
 </ul>
-<ul class="simple nested-toc-section">requestRender
-  <li><a class="reference" href="#requestRender" title="requestRender()">requestRender()</a></li>
+<ul class="simple nested-toc-section">removeFromLocalStorage
+  <li><a class="reference" href="#removeFromLocalStorage" title="removeFromLocalStorage()">removeFromLocalStorage()</a></li>
 
 </ul>
-<ul class="simple nested-toc-section">scriptAddCommand
-  <li><a class="reference" href="#scriptAddCommand%2Cstring%2Cstring%2Cstring%2Cstring" title="scriptAddCommand(context: string; keys: string; action: string; arg: string = &quot;&quot;)">scriptAddCommand(context: string; keys: string; action: string; arg: string = &quot;&quot;)</a></li>
+<ul class="simple nested-toc-section">requestRender
+  <li><a class="reference" href="#requestRender%2Cbool" title="requestRender(redrawEverything: bool = false)">requestRender(redrawEverything: bool = false)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">saveAppState
+  <li><a class="reference" href="#saveAppState" title="saveAppState()">saveAppState()</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">scriptGetOptionBool
@@ -220,6 +244,10 @@
 </ul>
 <ul class="simple nested-toc-section">scriptIsAstEditor
   <li><a class="reference" href="#scriptIsAstEditor%2CEditorId" title="scriptIsAstEditor(editorId: EditorId): bool">scriptIsAstEditor(editorId: EditorId): bool</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">scriptIsModelEditor
+  <li><a class="reference" href="#scriptIsModelEditor%2CEditorId" title="scriptIsModelEditor(editorId: EditorId): bool">scriptIsModelEditor(editorId: EditorId): bool</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">scriptIsTextEditor
@@ -286,6 +314,10 @@
   <li><a class="reference" href="#setFlag%2Cstring%2Cbool" title="setFlag(flag: string; value: bool)">setFlag(flag: string; value: bool)</a></li>
 
 </ul>
+<ul class="simple nested-toc-section">setGithubAccessToken
+  <li><a class="reference" href="#setGithubAccessToken%2Cstring" title="setGithubAccessToken(token: string)">setGithubAccessToken(token: string)</a></li>
+
+</ul>
 <ul class="simple nested-toc-section">setHandleActions
   <li><a class="reference" href="#setHandleActions%2Cstring%2Cbool" title="setHandleActions(context: string; value: bool)">setHandleActions(context: string; value: bool)</a></li>
 
@@ -319,7 +351,7 @@
 
 </ul>
 <ul class="simple nested-toc-section">writeFile
-  <li><a class="reference" href="#writeFile%2Cstring" title="writeFile(path: string = &quot;&quot;)">writeFile(path: string = &quot;&quot;)</a></li>
+  <li><a class="reference" href="#writeFile%2Cstring%2Cbool" title="writeFile(path: string = &quot;&quot;; app: bool = false)">writeFile(path: string = &quot;&quot;; app: bool = false)</a></li>
 
 </ul>
 
@@ -332,7 +364,6 @@
   </div>
   <div class="nine columns" id="content">
     <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L1" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L1" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
 <a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L1" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
     <div id="tocRoot"></div>
@@ -347,15 +378,28 @@
 <div class="section" id="12">
   <h1><a class="toc-backref" href="#12">Procs</a></h1>
   <dl class="item">
-    <div id="changeFontSize-procs-all">
+    <div id="addCommandScript-procs-all">
+  <div id="addCommandScript,string,string,string,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#addCommandScript%2Cstring%2Cstring%2Cstring%2Cstring"><span class="Identifier">addCommandScript</span></a><span class="Other">(</span><span class="Identifier">context</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">keys</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">action</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
+                      <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L111" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L111" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+
+</div>
+<div id="changeFontSize-procs-all">
   <div id="changeFontSize,float32">
   <dt><pre><span class="Keyword">proc</span> <a href="#changeFontSize%2Cfloat32"><span class="Identifier">changeFontSize</span></a><span class="Other">(</span><span class="Identifier">amount</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L29" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L531" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L29" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L46" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L46" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -368,9 +412,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L31" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L534" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L31" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L48" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L48" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -382,9 +425,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L67" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L681" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L67" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L88" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L88" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -396,9 +438,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L65" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L654" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L65" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L86" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L86" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -410,9 +451,21 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L73" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L718" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L73" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L97" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L97" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+
+</div>
+<div id="clearWorkspaceCaches-procs-all">
+  <div id="clearWorkspaceCaches">
+  <dt><pre><span class="Keyword">proc</span> <a href="#clearWorkspaceCaches"><span class="Identifier">clearWorkspaceCaches</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L27" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L27" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -424,9 +477,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L37" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L546" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L37" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L54" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L54" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -438,9 +490,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L51" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L594" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L51" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L68" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L68" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -452,9 +503,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L35" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L540" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L35" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L52" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L52" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -466,9 +516,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L55" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L604" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L55" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L72" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L72" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -480,9 +529,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L53" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L599" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L53" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L70" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L70" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -494,9 +542,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L94" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L877" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L94" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L119" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L119" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -508,9 +555,8 @@
   <dd>
     
     Returns the active editor instance
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L96" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L898" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L96" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L121" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L121" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -522,9 +568,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L92" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L869" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L92" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L117" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L117" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -536,9 +581,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L75" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L721" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L75" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L99" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L99" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -550,9 +594,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L7" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L485" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L7" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L13" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L13" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -565,9 +608,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L81" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L749" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L81" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L105" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L105" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -579,9 +621,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L108" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L921" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L108" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L133" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L133" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -594,9 +635,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L19" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L503" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L19" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L36" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L36" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -608,9 +648,8 @@
   <dd>
     
     Javascript backend only! Opens the config file in a new view.
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L99" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L902" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L99" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L124" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L124" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -622,9 +661,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L61" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L635" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L61" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L76" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L76" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -636,9 +674,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L63" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L646" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L63" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L84" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L84" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -650,9 +687,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L71" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L715" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L71" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L95" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L95" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -664,9 +700,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L79" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L746" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L79" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L103" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L103" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -678,9 +713,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L47" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L577" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L47" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L64" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L64" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -692,9 +726,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L45" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L568" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L45" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L62" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L62" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -706,9 +739,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L39" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L552" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L39" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L56" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L56" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -720,23 +752,63 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L41" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L560" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L41" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L58" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L58" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+
+</div>
+<div id="openAbsytreeServerWorkspace-procs-all">
+  <div id="openAbsytreeServerWorkspace,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#openAbsytreeServerWorkspace%2Cstring"><span class="Identifier">openAbsytreeServerWorkspace</span></a><span class="Other">(</span><span class="Identifier">url</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L32" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L32" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
 
 </div>
 <div id="openFile-procs-all">
-  <div id="openFile,string">
-  <dt><pre><span class="Keyword">proc</span> <a href="#openFile%2Cstring"><span class="Identifier">openFile</span></a><span class="Other">(</span><span class="Identifier">path</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <div id="openFile,string,bool">
+  <dt><pre><span class="Keyword">proc</span> <a href="#openFile%2Cstring%2Cbool"><span class="Identifier">openFile</span></a><span class="Other">(</span><span class="Identifier">path</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">app</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L57" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L612" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L57" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L78" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L78" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+
+</div>
+<div id="openGithubWorkspace-procs-all">
+  <div id="openGithubWorkspace,string,string,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#openGithubWorkspace%2Cstring%2Cstring%2Cstring"><span class="Identifier">openGithubWorkspace</span></a><span class="Other">(</span><span class="Identifier">user</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">repository</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">branchOrHash</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L29" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L29" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+
+</div>
+<div id="openLocalWorkspace-procs-all">
+  <div id="openLocalWorkspace,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#openLocalWorkspace%2Cstring"><span class="Identifier">openLocalWorkspace</span></a><span class="Other">(</span><span class="Identifier">path</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L34" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L34" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -748,9 +820,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L43" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L564" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L43" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L60" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L60" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -762,9 +833,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L27" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L528" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L27" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L44" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L44" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -776,9 +846,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L69" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L703" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L69" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L93" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L93" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -791,38 +860,48 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L90" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L862" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L90" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L115" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L115" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+
+</div>
+<div id="removeFromLocalStorage-procs-all">
+  <div id="removeFromLocalStorage">
+  <dt><pre><span class="Keyword">proc</span> <a href="#removeFromLocalStorage"><span class="Identifier">removeFromLocalStorage</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    Browser only Clears the content of the current document in local storage
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L80" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L80" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
 
 </div>
 <div id="requestRender-procs-all">
-  <div id="requestRender">
-  <dt><pre><span class="Keyword">proc</span> <a href="#requestRender"><span class="Identifier">requestRender</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <div id="requestRender,bool">
+  <dt><pre><span class="Keyword">proc</span> <a href="#requestRender%2Cbool"><span class="Identifier">requestRender</span></a><span class="Other">(</span><span class="Identifier">redrawEverything</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L9" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L488" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L9" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L17" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L17" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
 
 </div>
-<div id="scriptAddCommand-procs-all">
-  <div id="scriptAddCommand,string,string,string,string">
-  <dt><pre><span class="Keyword">proc</span> <a href="#scriptAddCommand%2Cstring%2Cstring%2Cstring%2Cstring"><span class="Identifier">scriptAddCommand</span></a><span class="Other">(</span><span class="Identifier">context</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">keys</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">action</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
-                      <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<div id="saveAppState-procs-all">
+  <div id="saveAppState">
+  <dt><pre><span class="Keyword">proc</span> <a href="#saveAppState"><span class="Identifier">saveAppState</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L87" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L854" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L87" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L15" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L15" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -835,9 +914,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L135" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L1051" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L135" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L165" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L165" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -850,9 +928,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L133" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L1048" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L133" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L163" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L163" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -865,9 +942,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L131" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L1045" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L131" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L161" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L161" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -880,9 +956,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L137" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L1054" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L137" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L167" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L167" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -895,9 +970,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L127" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L999" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L127" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L157" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L157" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -910,9 +984,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L129" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L1009" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L129" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L159" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L159" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -925,9 +998,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L116" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L953" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L116" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L144" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L144" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -940,9 +1012,22 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L112" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L936" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L112" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L137" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L137" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+
+</div>
+<div id="scriptIsModelEditor-procs-all">
+  <div id="scriptIsModelEditor,EditorId">
+  <dt><pre><span class="Keyword">proc</span> <a href="#scriptIsModelEditor%2CEditorId"><span class="Identifier">scriptIsModelEditor</span></a><span class="Other">(</span><span class="Identifier">editorId</span><span class="Other">:</span> <a href="_._/src/scripting_api.html#EditorId"><span class="Identifier">EditorId</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L139" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L139" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -955,9 +1040,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L110" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L929" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L110" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L135" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L135" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -969,9 +1053,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L85" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L851" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L85" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L109" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L109" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -984,9 +1067,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L83" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L846" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L83" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L107" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L107" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -999,9 +1081,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L114" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L943" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L114" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L141" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L141" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1014,9 +1095,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L147" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L1069" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L147" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L177" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L177" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1029,9 +1109,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L143" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L1063" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L143" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L173" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L173" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1044,9 +1123,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L141" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L1060" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L141" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L171" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L171" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1059,9 +1137,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L139" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L1057" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L139" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L169" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L169" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1074,9 +1151,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L145" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L1066" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L145" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L175" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L175" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1089,9 +1165,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L120" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L972" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L120" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L148" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L148" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1105,9 +1180,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L124" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L990" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L124" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L153" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L153" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1120,9 +1194,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L118" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L961" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L118" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L146" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L146" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1135,9 +1208,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L122" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L981" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L122" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L151" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L151" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1150,9 +1222,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L15" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L497" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L15" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L23" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L23" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1165,9 +1236,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L17" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L500" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L17" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L25" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L25" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1179,9 +1249,21 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L21" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L506" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L21" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L38" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L38" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+
+</div>
+<div id="setGithubAccessToken-procs-all">
+  <div id="setGithubAccessToken,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#setGithubAccessToken%2Cstring"><span class="Identifier">setGithubAccessToken</span></a><span class="Other">(</span><span class="Identifier">token</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    Stores the give token in local storage as 'GithubAccessToken', which will be used in requests to the github api
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L90" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L90" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1194,9 +1276,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L13" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L494" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L13" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L21" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L21" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1209,9 +1290,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L11" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L491" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L11" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L19" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L19" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1223,9 +1303,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L49" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L586" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L49" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L66" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L66" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1237,9 +1316,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L77" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L728" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L77" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L101" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L101" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1252,9 +1330,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L25" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L512" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L25" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L42" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L42" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1266,9 +1343,8 @@
   <dd>
     
     Javascript backend only! Runs the content of the active editor as javascript using <tt class="docutils literal"><span class="pre"><span class="Identifier">eval</span><span class="Punctuation">(</span><span class="Punctuation">)</span></span></tt>. &quot;use strict&quot; is prepended to the content to force strict mode.
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L103" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L908" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L103" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L128" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L128" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1280,9 +1356,8 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L23" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L509" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L23" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L40" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L40" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1294,23 +1369,22 @@
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L33" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L537" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L33" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L50" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L50" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
 
 </div>
 <div id="writeFile-procs-all">
-  <div id="writeFile,string">
-  <dt><pre><span class="Keyword">proc</span> <a href="#writeFile%2Cstring"><span class="Identifier">writeFile</span></a><span class="Other">(</span><span class="Identifier">path</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <div id="writeFile,string,bool">
+  <dt><pre><span class="Keyword">proc</span> <a href="#writeFile%2Cstring%2Cbool"><span class="Identifier">writeFile</span></a><span class="Other">(</span><span class="Identifier">path</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">app</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
-    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L59" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-    <a href="https://github.com/Nimaoth/Absytree/tree/main/src/editor.nim#L625" class="link-seesrc" target="_blank">Editor Source</a>&nbsp;&nbsp;
-<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L59" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/Nimaoth/Absytree//tree/main/scripting/editor_api.nim#L74" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/Nimaoth/Absytree//edit/devel/scripting/editor_api.nim#L74" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -1326,7 +1400,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-21 21:56:32 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-05-20 16:45:55 UTC</small>
       </div>
     </div>
   </div>
@@ -1336,4 +1410,3 @@
   <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 </body>
 </html>
-

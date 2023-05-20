@@ -1,0 +1,33 @@
+nimTitle	editor_model_api	editor_model_api.html	module editor_model_api		0
+nim	scroll	editor_model_api.html#scroll,ModelDocumentEditor,float32	proc scroll(self: ModelDocumentEditor; amount: float32)		13
+nim	setMode	editor_model_api.html#setMode,ModelDocumentEditor,string	proc setMode(self: ModelDocumentEditor; mode: string)		15
+nim	mode	editor_model_api.html#mode,ModelDocumentEditor	proc mode(self: ModelDocumentEditor): string		17
+nim	getContextWithMode	editor_model_api.html#getContextWithMode,ModelDocumentEditor,string	proc getContextWithMode(self: ModelDocumentEditor; context: string): string		19
+nim	moveCursorLeft	editor_model_api.html#moveCursorLeft,ModelDocumentEditor,bool	proc moveCursorLeft(self: ModelDocumentEditor; select: bool = false)		22
+nim	moveCursorRight	editor_model_api.html#moveCursorRight,ModelDocumentEditor,bool	proc moveCursorRight(self: ModelDocumentEditor; select: bool = false)		24
+nim	moveCursorLeftLine	editor_model_api.html#moveCursorLeftLine,ModelDocumentEditor,bool	proc moveCursorLeftLine(self: ModelDocumentEditor; select: bool = false)		26
+nim	moveCursorRightLine	editor_model_api.html#moveCursorRightLine,ModelDocumentEditor,bool	proc moveCursorRightLine(self: ModelDocumentEditor; select: bool = false)		29
+nim	moveCursorLineStart	editor_model_api.html#moveCursorLineStart,ModelDocumentEditor,bool	proc moveCursorLineStart(self: ModelDocumentEditor; select: bool = false)		32
+nim	moveCursorLineEnd	editor_model_api.html#moveCursorLineEnd,ModelDocumentEditor,bool	proc moveCursorLineEnd(self: ModelDocumentEditor; select: bool = false)		35
+nim	moveCursorLineStartInline	editor_model_api.html#moveCursorLineStartInline,ModelDocumentEditor,bool	proc moveCursorLineStartInline(self: ModelDocumentEditor; select: bool = false)		37
+nim	moveCursorLineEndInline	editor_model_api.html#moveCursorLineEndInline,ModelDocumentEditor,bool	proc moveCursorLineEndInline(self: ModelDocumentEditor; select: bool = false)		40
+nim	moveCursorUp	editor_model_api.html#moveCursorUp,ModelDocumentEditor,bool	proc moveCursorUp(self: ModelDocumentEditor; select: bool = false)		43
+nim	moveCursorDown	editor_model_api.html#moveCursorDown,ModelDocumentEditor,bool	proc moveCursorDown(self: ModelDocumentEditor; select: bool = false)		45
+nim	moveCursorLeftCell	editor_model_api.html#moveCursorLeftCell,ModelDocumentEditor,bool	proc moveCursorLeftCell(self: ModelDocumentEditor; select: bool = false)		47
+nim	moveCursorRightCell	editor_model_api.html#moveCursorRightCell,ModelDocumentEditor,bool	proc moveCursorRightCell(self: ModelDocumentEditor; select: bool = false)		50
+nim	selectNode	editor_model_api.html#selectNode,ModelDocumentEditor,bool	proc selectNode(self: ModelDocumentEditor; select: bool = false)		53
+nim	selectParentCell	editor_model_api.html#selectParentCell,ModelDocumentEditor	proc selectParentCell(self: ModelDocumentEditor)		55
+nim	selectPrevPlaceholder	editor_model_api.html#selectPrevPlaceholder,ModelDocumentEditor,bool	proc selectPrevPlaceholder(self: ModelDocumentEditor; select: bool = false)		57
+nim	selectNextPlaceholder	editor_model_api.html#selectNextPlaceholder,ModelDocumentEditor,bool	proc selectNextPlaceholder(self: ModelDocumentEditor; select: bool = false)		60
+nim	deleteLeft	editor_model_api.html#deleteLeft,ModelDocumentEditor	proc deleteLeft(self: ModelDocumentEditor)		63
+nim	deleteRight	editor_model_api.html#deleteRight,ModelDocumentEditor	proc deleteRight(self: ModelDocumentEditor)		65
+nim	createNewNode	editor_model_api.html#createNewNode,ModelDocumentEditor	proc createNewNode(self: ModelDocumentEditor)		67
+nim	insertTextAtCursor	editor_model_api.html#insertTextAtCursor,ModelDocumentEditor,string	proc insertTextAtCursor(self: ModelDocumentEditor; input: string): bool		69
+nim	undo	editor_model_api.html#undo,ModelDocumentEditor	proc undo(self: ModelDocumentEditor)		72
+nim	redo	editor_model_api.html#redo,ModelDocumentEditor	proc redo(self: ModelDocumentEditor)		74
+nim	toggleUseDefaultCellBuilder	editor_model_api.html#toggleUseDefaultCellBuilder,ModelDocumentEditor	proc toggleUseDefaultCellBuilder(self: ModelDocumentEditor)		76
+nim	showCompletions	editor_model_api.html#showCompletions,ModelDocumentEditor	proc showCompletions(self: ModelDocumentEditor)		78
+nim	hideCompletions	editor_model_api.html#hideCompletions,ModelDocumentEditor	proc hideCompletions(self: ModelDocumentEditor)		80
+nim	selectPrevCompletion	editor_model_api.html#selectPrevCompletion,ModelDocumentEditor	proc selectPrevCompletion(self: ModelDocumentEditor)		82
+nim	selectNextCompletion	editor_model_api.html#selectNextCompletion,ModelDocumentEditor	proc selectNextCompletion(self: ModelDocumentEditor)		84
+nim	applySelectedCompletion	editor_model_api.html#applySelectedCompletion,ModelDocumentEditor	proc applySelectedCompletion(self: ModelDocumentEditor)		86

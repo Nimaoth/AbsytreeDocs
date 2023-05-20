@@ -1,46 +1,47 @@
 nimTitle	editor_ast_api	editor_ast_api.html	module editor_ast_api		0
-nim	moveCursor	editor_ast_api.html#moveCursor,AstDocumentEditor,int	proc moveCursor(self: AstDocumentEditor; direction: int)		7
-nim	moveCursorUp	editor_ast_api.html#moveCursorUp,AstDocumentEditor	proc moveCursorUp(self: AstDocumentEditor)		9
-nim	moveCursorDown	editor_ast_api.html#moveCursorDown,AstDocumentEditor	proc moveCursorDown(self: AstDocumentEditor)		11
-nim	moveCursorNext	editor_ast_api.html#moveCursorNext,AstDocumentEditor	proc moveCursorNext(self: AstDocumentEditor)		13
-nim	moveCursorPrev	editor_ast_api.html#moveCursorPrev,AstDocumentEditor	proc moveCursorPrev(self: AstDocumentEditor)		15
-nim	moveCursorNextLine	editor_ast_api.html#moveCursorNextLine,AstDocumentEditor	proc moveCursorNextLine(self: AstDocumentEditor)		17
-nim	moveCursorPrevLine	editor_ast_api.html#moveCursorPrevLine,AstDocumentEditor	proc moveCursorPrevLine(self: AstDocumentEditor)		19
-nim	selectContaining	editor_ast_api.html#selectContaining,AstDocumentEditor,string	proc selectContaining(self: AstDocumentEditor; container: string)		21
-nim	deleteSelected	editor_ast_api.html#deleteSelected,AstDocumentEditor	proc deleteSelected(self: AstDocumentEditor)		23
-nim	copySelected	editor_ast_api.html#copySelected,AstDocumentEditor	proc copySelected(self: AstDocumentEditor)		25
-nim	finishEdit	editor_ast_api.html#finishEdit,AstDocumentEditor,bool	proc finishEdit(self: AstDocumentEditor; apply: bool)		27
-nim	undo	editor_ast_api.html#undo,AstDocumentEditor	proc undo(self: AstDocumentEditor)		29
-nim	redo	editor_ast_api.html#redo,AstDocumentEditor	proc redo(self: AstDocumentEditor)		31
-nim	insertAfterSmart	editor_ast_api.html#insertAfterSmart,AstDocumentEditor,string	proc insertAfterSmart(self: AstDocumentEditor; nodeTemplate: string)		33
-nim	insertAfter	editor_ast_api.html#insertAfter,AstDocumentEditor,string	proc insertAfter(self: AstDocumentEditor; nodeTemplate: string)		35
-nim	insertBefore	editor_ast_api.html#insertBefore,AstDocumentEditor,string	proc insertBefore(self: AstDocumentEditor; nodeTemplate: string)		37
-nim	insertChild	editor_ast_api.html#insertChild,AstDocumentEditor,string	proc insertChild(self: AstDocumentEditor; nodeTemplate: string)		39
-nim	replace	editor_ast_api.html#replace,AstDocumentEditor,string	proc replace(self: AstDocumentEditor; nodeTemplate: string)		41
-nim	replaceEmpty	editor_ast_api.html#replaceEmpty,AstDocumentEditor,string	proc replaceEmpty(self: AstDocumentEditor; nodeTemplate: string)		43
-nim	replaceParent	editor_ast_api.html#replaceParent,AstDocumentEditor	proc replaceParent(self: AstDocumentEditor)		45
-nim	wrap	editor_ast_api.html#wrap,AstDocumentEditor,string	proc wrap(self: AstDocumentEditor; nodeTemplate: string)		47
-nim	editPrevEmpty	editor_ast_api.html#editPrevEmpty,AstDocumentEditor	proc editPrevEmpty(self: AstDocumentEditor)		49
-nim	editNextEmpty	editor_ast_api.html#editNextEmpty,AstDocumentEditor	proc editNextEmpty(self: AstDocumentEditor)		51
-nim	rename	editor_ast_api.html#rename,AstDocumentEditor	proc rename(self: AstDocumentEditor)		53
-nim	selectPrevCompletion	editor_ast_api.html#selectPrevCompletion,AstDocumentEditor	proc selectPrevCompletion(self: AstDocumentEditor)		55
-nim	selectNextCompletion	editor_ast_api.html#selectNextCompletion,AstDocumentEditor	proc selectNextCompletion(editor: AstDocumentEditor)		57
-nim	applySelectedCompletion	editor_ast_api.html#applySelectedCompletion,AstDocumentEditor	proc applySelectedCompletion(editor: AstDocumentEditor)		59
-nim	cancelAndNextCompletion	editor_ast_api.html#cancelAndNextCompletion,AstDocumentEditor	proc cancelAndNextCompletion(self: AstDocumentEditor)		61
-nim	cancelAndPrevCompletion	editor_ast_api.html#cancelAndPrevCompletion,AstDocumentEditor	proc cancelAndPrevCompletion(self: AstDocumentEditor)		63
-nim	cancelAndDelete	editor_ast_api.html#cancelAndDelete,AstDocumentEditor	proc cancelAndDelete(self: AstDocumentEditor)		65
-nim	moveNodeToPrevSpace	editor_ast_api.html#moveNodeToPrevSpace,AstDocumentEditor	proc moveNodeToPrevSpace(self: AstDocumentEditor)		67
-nim	moveNodeToNextSpace	editor_ast_api.html#moveNodeToNextSpace,AstDocumentEditor	proc moveNodeToNextSpace(self: AstDocumentEditor)		69
-nim	selectPrev	editor_ast_api.html#selectPrev,AstDocumentEditor	proc selectPrev(self: AstDocumentEditor)		71
-nim	selectNext	editor_ast_api.html#selectNext,AstDocumentEditor	proc selectNext(self: AstDocumentEditor)		73
-nim	goto	editor_ast_api.html#goto,AstDocumentEditor,string	proc goto(self: AstDocumentEditor; where: string)		75
-nim	runSelectedFunction	editor_ast_api.html#runSelectedFunction,AstDocumentEditor	proc runSelectedFunction(self: AstDocumentEditor)		77
-nim	toggleOption	editor_ast_api.html#toggleOption,AstDocumentEditor,string	proc toggleOption(self: AstDocumentEditor; name: string)		79
-nim	runLastCommand	editor_ast_api.html#runLastCommand,AstDocumentEditor,string	proc runLastCommand(self: AstDocumentEditor; which: string)		81
-nim	selectCenterNode	editor_ast_api.html#selectCenterNode,AstDocumentEditor	proc selectCenterNode(self: AstDocumentEditor)		83
-nim	scroll	editor_ast_api.html#scroll,AstDocumentEditor,float32	proc scroll(self: AstDocumentEditor; amount: float32)		85
-nim	scrollOutput	editor_ast_api.html#scrollOutput,AstDocumentEditor,string	proc scrollOutput(self: AstDocumentEditor; arg: string)		87
-nim	dumpContext	editor_ast_api.html#dumpContext,AstDocumentEditor	proc dumpContext(self: AstDocumentEditor)		89
-nim	setMode	editor_ast_api.html#setMode,AstDocumentEditor,string	proc setMode(self: AstDocumentEditor; mode: string)		91
-nim	mode	editor_ast_api.html#mode,AstDocumentEditor	proc mode(self: AstDocumentEditor): string		93
-nim	getContextWithMode	editor_ast_api.html#getContextWithMode,AstDocumentEditor,string	proc getContextWithMode(self: AstDocumentEditor; context: string): string		95
+nim	moveCursor	editor_ast_api.html#moveCursor,AstDocumentEditor,int	proc moveCursor(self: AstDocumentEditor; direction: int)		13
+nim	moveCursorUp	editor_ast_api.html#moveCursorUp,AstDocumentEditor	proc moveCursorUp(self: AstDocumentEditor)		15
+nim	moveCursorDown	editor_ast_api.html#moveCursorDown,AstDocumentEditor	proc moveCursorDown(self: AstDocumentEditor)		17
+nim	moveCursorNext	editor_ast_api.html#moveCursorNext,AstDocumentEditor	proc moveCursorNext(self: AstDocumentEditor)		19
+nim	moveCursorPrev	editor_ast_api.html#moveCursorPrev,AstDocumentEditor	proc moveCursorPrev(self: AstDocumentEditor)		21
+nim	moveCursorNextLine	editor_ast_api.html#moveCursorNextLine,AstDocumentEditor	proc moveCursorNextLine(self: AstDocumentEditor)		23
+nim	moveCursorPrevLine	editor_ast_api.html#moveCursorPrevLine,AstDocumentEditor	proc moveCursorPrevLine(self: AstDocumentEditor)		25
+nim	selectContaining	editor_ast_api.html#selectContaining,AstDocumentEditor,string	proc selectContaining(self: AstDocumentEditor; container: string)		27
+nim	deleteSelected	editor_ast_api.html#deleteSelected,AstDocumentEditor	proc deleteSelected(self: AstDocumentEditor)		29
+nim	copySelected	editor_ast_api.html#copySelected,AstDocumentEditor	proc copySelected(self: AstDocumentEditor)		31
+nim	finishEdit	editor_ast_api.html#finishEdit,AstDocumentEditor,bool	proc finishEdit(self: AstDocumentEditor; apply: bool)		33
+nim	undo	editor_ast_api.html#undo,AstDocumentEditor	proc undo(self: AstDocumentEditor)		35
+nim	redo	editor_ast_api.html#redo,AstDocumentEditor	proc redo(self: AstDocumentEditor)		37
+nim	insertAfterSmart	editor_ast_api.html#insertAfterSmart,AstDocumentEditor,string	proc insertAfterSmart(self: AstDocumentEditor; nodeTemplate: string)		39
+nim	insertAfter	editor_ast_api.html#insertAfter,AstDocumentEditor,string	proc insertAfter(self: AstDocumentEditor; nodeTemplate: string)		42
+nim	insertBefore	editor_ast_api.html#insertBefore,AstDocumentEditor,string	proc insertBefore(self: AstDocumentEditor; nodeTemplate: string)		44
+nim	insertChild	editor_ast_api.html#insertChild,AstDocumentEditor,string	proc insertChild(self: AstDocumentEditor; nodeTemplate: string)		46
+nim	replace	editor_ast_api.html#replace,AstDocumentEditor,string	proc replace(self: AstDocumentEditor; nodeTemplate: string)		48
+nim	replaceEmpty	editor_ast_api.html#replaceEmpty,AstDocumentEditor,string	proc replaceEmpty(self: AstDocumentEditor; nodeTemplate: string)		50
+nim	replaceParent	editor_ast_api.html#replaceParent,AstDocumentEditor	proc replaceParent(self: AstDocumentEditor)		52
+nim	wrap	editor_ast_api.html#wrap,AstDocumentEditor,string	proc wrap(self: AstDocumentEditor; nodeTemplate: string)		54
+nim	editPrevEmpty	editor_ast_api.html#editPrevEmpty,AstDocumentEditor	proc editPrevEmpty(self: AstDocumentEditor)		56
+nim	editNextEmpty	editor_ast_api.html#editNextEmpty,AstDocumentEditor	proc editNextEmpty(self: AstDocumentEditor)		58
+nim	rename	editor_ast_api.html#rename,AstDocumentEditor	proc rename(self: AstDocumentEditor)		60
+nim	selectPrevCompletion	editor_ast_api.html#selectPrevCompletion,AstDocumentEditor	proc selectPrevCompletion(self: AstDocumentEditor)		62
+nim	selectNextCompletion	editor_ast_api.html#selectNextCompletion,AstDocumentEditor	proc selectNextCompletion(self: AstDocumentEditor)		64
+nim	applySelectedCompletion	editor_ast_api.html#applySelectedCompletion,AstDocumentEditor	proc applySelectedCompletion(self: AstDocumentEditor)		66
+nim	cancelAndNextCompletion	editor_ast_api.html#cancelAndNextCompletion,AstDocumentEditor	proc cancelAndNextCompletion(self: AstDocumentEditor)		68
+nim	cancelAndPrevCompletion	editor_ast_api.html#cancelAndPrevCompletion,AstDocumentEditor	proc cancelAndPrevCompletion(self: AstDocumentEditor)		70
+nim	cancelAndDelete	editor_ast_api.html#cancelAndDelete,AstDocumentEditor	proc cancelAndDelete(self: AstDocumentEditor)		72
+nim	moveNodeToPrevSpace	editor_ast_api.html#moveNodeToPrevSpace,AstDocumentEditor	proc moveNodeToPrevSpace(self: AstDocumentEditor)		74
+nim	moveNodeToNextSpace	editor_ast_api.html#moveNodeToNextSpace,AstDocumentEditor	proc moveNodeToNextSpace(self: AstDocumentEditor)		76
+nim	selectPrev	editor_ast_api.html#selectPrev,AstDocumentEditor	proc selectPrev(self: AstDocumentEditor)		78
+nim	selectNext	editor_ast_api.html#selectNext,AstDocumentEditor	proc selectNext(self: AstDocumentEditor)		80
+nim	openGotoSymbolPopup	editor_ast_api.html#openGotoSymbolPopup,AstDocumentEditor	proc openGotoSymbolPopup(self: AstDocumentEditor)		82
+nim	goto	editor_ast_api.html#goto,AstDocumentEditor,string	proc goto(self: AstDocumentEditor; where: string)		84
+nim	runSelectedFunction	editor_ast_api.html#runSelectedFunction,AstDocumentEditor	proc runSelectedFunction(self: AstDocumentEditor)		86
+nim	toggleOption	editor_ast_api.html#toggleOption,AstDocumentEditor,string	proc toggleOption(self: AstDocumentEditor; name: string)		88
+nim	runLastCommand	editor_ast_api.html#runLastCommand,AstDocumentEditor,string	proc runLastCommand(self: AstDocumentEditor; which: string)		90
+nim	selectCenterNode	editor_ast_api.html#selectCenterNode,AstDocumentEditor	proc selectCenterNode(self: AstDocumentEditor)		92
+nim	scroll	editor_ast_api.html#scroll,AstDocumentEditor,float32	proc scroll(self: AstDocumentEditor; amount: float32)		94
+nim	scrollOutput	editor_ast_api.html#scrollOutput,AstDocumentEditor,string	proc scrollOutput(self: AstDocumentEditor; arg: string)		96
+nim	dumpContext	editor_ast_api.html#dumpContext,AstDocumentEditor	proc dumpContext(self: AstDocumentEditor)		98
+nim	setMode	editor_ast_api.html#setMode,AstDocumentEditor,string	proc setMode(self: AstDocumentEditor; mode: string)		100
+nim	mode	editor_ast_api.html#mode,AstDocumentEditor	proc mode(self: AstDocumentEditor): string		102
+nim	getContextWithMode	editor_ast_api.html#getContextWithMode,AstDocumentEditor,string	proc getContextWithMode(self: AstDocumentEditor; context: string): string		104

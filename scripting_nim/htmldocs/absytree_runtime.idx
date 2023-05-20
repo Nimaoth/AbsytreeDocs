@@ -1,36 +1,38 @@
 nimTitle	absytree_runtime	absytree_runtime.html	module absytree_runtime		0
-nim	log	absytree_runtime.html#log,varargs[string,]	proc log(args: varargs[string, `$`])		13
-nim	addCallback	absytree_runtime.html#addCallback,proc(JsonNode)	proc addCallback(action: proc (args: JsonNode): void): int		22
-nim	addCallback	absytree_runtime.html#addCallback,proc(JsonNode)_2	proc addCallback(action: proc (args: JsonNode): bool): int		27
-nim	handleLambdaAction	absytree_runtime.html#handleLambdaAction,string	proc handleLambdaAction(key: string): bool		36
-nim	removeCommand	absytree_runtime.html#removeCommand,string,string_2	proc removeCommand(context: string; keys: string)		42
-nim	runAction	absytree_runtime.html#runAction.m,string,varargs[untyped]	macro runAction(action: string; args: varargs[untyped]): untyped		45
-nim	isTextEditor	absytree_runtime.html#isTextEditor.t,EditorId,untyped	template isTextEditor(editorId: EditorId; injected: untyped): bool		59
-nim	isAstEditor	absytree_runtime.html#isAstEditor.t,EditorId,untyped	template isAstEditor(editorId: EditorId; injected: untyped): bool		62
-nim	handleCallbackImpl	absytree_runtime.html#handleCallbackImpl,int,JsonNode	proc handleCallbackImpl(id: int; args: JsonNode): bool		65
-nim	runAction	absytree_runtime.html#runAction,EditorId,string,string	proc runAction(id: EditorId; action: string; arg: string = "")		73
-nim	runAction	absytree_runtime.html#runAction,TextDocumentEditor,string,string	proc runAction(editor: TextDocumentEditor; action: string; arg: string = "")		76
-nim	insertText	absytree_runtime.html#insertText,AnyDocumentEditor,string	proc insertText(editor: AnyDocumentEditor; text: string)		79
-nim	selection	absytree_runtime.html#selection,TextDocumentEditor	proc selection(editor: TextDocumentEditor): Selection		82
-nim	selection=	absytree_runtime.html#selection=,TextDocumentEditor,Selection	proc selection=(editor: TextDocumentEditor; selection: Selection)		85
-nim	selections	absytree_runtime.html#selections,TextDocumentEditor	proc selections(editor: TextDocumentEditor): seq[Selection]		88
-nim	selections=	absytree_runtime.html#selections=,TextDocumentEditor,seq[Selection]	proc selections=(editor: TextDocumentEditor; selection: seq[Selection])		91
-nim	getLine	absytree_runtime.html#getLine,TextDocumentEditor,int	proc getLine(editor: TextDocumentEditor; line: int): string		94
-nim	getLineCount	absytree_runtime.html#getLineCount,TextDocumentEditor	proc getLineCount(editor: TextDocumentEditor): int		97
-nim	getOption	absytree_runtime.html#getOption,string,T	proc getOption[T](path: string; default: T = T.default): T		100
-nim	setOption	absytree_runtime.html#setOption,string,T	proc setOption[T](path: string; value: T)		114
-nim	addCommand	absytree_runtime.html#addCommand.m,string,string,string,varargs[untyped]	macro addCommand(context: string; keys: string; action: string; args: varargs[untyped]): untyped		129
-nim	addCommand	absytree_runtime.html#addCommand,string,string,proc)	proc addCommand(context: string; keys: string; action: proc (): void)		143
-nim	addCommandBlock	absytree_runtime.html#addCommandBlock.t,static[string],string,untyped	template addCommandBlock(context: static[string]; keys: string; body: untyped): untyped		148
-nim	addEditorCommandBlock	absytree_runtime.html#addEditorCommandBlock.t,static[string],string,untyped	template addEditorCommandBlock(mode: static[string]; keys: string; body: untyped): untyped		153
-nim	addEditorCommand	absytree_runtime.html#addEditorCommand,string,string,proc)	proc addEditorCommand(mode: string; keys: string; action: proc (): void)		158
-nim	addEditorCommand	absytree_runtime.html#addEditorCommand.m,static[string],string,string,varargs[untyped]	macro addEditorCommand(mode: static[string]; keys: string; action: string;\n                 args: varargs[untyped]): untyped		163
-nim	addTextCommandBlock	absytree_runtime.html#addTextCommandBlock.t,static[string],string,untyped	template addTextCommandBlock(mode: static[string]; keys: string; body: untyped): untyped		179
-nim	addTextCommand	absytree_runtime.html#addTextCommand,string,string,proc(TextDocumentEditor)	proc addTextCommand(mode: string; keys: string;\n               action: proc (editor: TextDocumentEditor): void)		185
-nim	addTextCommand	absytree_runtime.html#addTextCommand.m,static[string],string,string,varargs[untyped]	macro addTextCommand(mode: static[string]; keys: string; action: string;\n               args: varargs[untyped]): untyped		190
-nim	setTextInputHandler	absytree_runtime.html#setTextInputHandler,string,proc(TextDocumentEditor,string)	proc setTextInputHandler(context: string; action: proc (editor: TextDocumentEditor;\n    input: string): bool)		205
-nim	addAstCommandBlock	absytree_runtime.html#addAstCommandBlock.t,static[string],string,untyped	template addAstCommandBlock(mode: static[string]; keys: string; body: untyped): untyped		213
-nim	addAstCommand	absytree_runtime.html#addAstCommand,string,string,proc(AstDocumentEditor)	proc addAstCommand(mode: string; keys: string;\n              action: proc (editor: AstDocumentEditor): void)		219
-nim	addAstCommand	absytree_runtime.html#addAstCommand.m,static[string],string,string,varargs[untyped]	macro addAstCommand(mode: static[string]; keys: string; action: string;\n              args: varargs[untyped]): untyped		224
-nimgrp	addcallback	absytree_runtime.html#addCallback-procs-all	proc		22
-nimgrp	runaction	absytree_runtime.html#runAction-procs-all	proc		73
+nim	info	absytree_runtime.html#info,varargs[string,]	proc info(args: varargs[string, `$`])		13
+nim	infof	absytree_runtime.html#infof.t,staticstring	template infof(x: static string)		22
+nim	addCallback	absytree_runtime.html#addCallback,proc(JsonNode)	proc addCallback(action: proc (args: JsonNode): void): int		25
+nim	addCallback	absytree_runtime.html#addCallback,proc(JsonNode)_2	proc addCallback(action: proc (args: JsonNode): bool): int		30
+nim	handleLambdaAction	absytree_runtime.html#handleLambdaAction,JsonNode	proc handleLambdaAction(args: JsonNode): bool		39
+nim	removeCommand	absytree_runtime.html#removeCommand,string,string_2	proc removeCommand(context: string; keys: string)		46
+nim	runAction	absytree_runtime.html#runAction.m,string,varargs[untyped]	macro runAction(action: string; args: varargs[untyped]): untyped		49
+nim	isTextEditor	absytree_runtime.html#isTextEditor.t,EditorId,untyped	template isTextEditor(editorId: EditorId; injected: untyped): bool		63
+nim	isAstEditor	absytree_runtime.html#isAstEditor.t,EditorId,untyped	template isAstEditor(editorId: EditorId; injected: untyped): bool		66
+nim	handleCallbackImpl	absytree_runtime.html#handleCallbackImpl,int,JsonNode	proc handleCallbackImpl(id: int; args: JsonNode): bool		69
+nim	runAction	absytree_runtime.html#runAction,EditorId,string,string	proc runAction(id: EditorId; action: string; arg: string = "")		77
+nim	runAction	absytree_runtime.html#runAction,TextDocumentEditor,string,string	proc runAction(editor: TextDocumentEditor; action: string; arg: string = "")		80
+nim	insertText	absytree_runtime.html#insertText,AnyDocumentEditor,string	proc insertText(editor: AnyDocumentEditor; text: string)		83
+nim	selection	absytree_runtime.html#selection,TextDocumentEditor	proc selection(editor: TextDocumentEditor): Selection		86
+nim	selection=	absytree_runtime.html#selection=,TextDocumentEditor,Selection	proc selection=(editor: TextDocumentEditor; selection: Selection)		89
+nim	selections	absytree_runtime.html#selections,TextDocumentEditor	proc selections(editor: TextDocumentEditor): seq[Selection]		92
+nim	selections=	absytree_runtime.html#selections=,TextDocumentEditor,seq[Selection]	proc selections=(editor: TextDocumentEditor; selection: seq[Selection])		95
+nim	getLine	absytree_runtime.html#getLine,TextDocumentEditor,int	proc getLine(editor: TextDocumentEditor; line: int): string		98
+nim	getLineCount	absytree_runtime.html#getLineCount,TextDocumentEditor	proc getLineCount(editor: TextDocumentEditor): int		101
+nim	getOption	absytree_runtime.html#getOption,string,T	proc getOption[T](path: string; default: T = T.default): T		104
+nim	setOption	absytree_runtime.html#setOption,string,T	proc setOption[T](path: string; value: T)		118
+nim	addCommand	absytree_runtime.html#addCommand.m,string,string,string,varargs[untyped]	macro addCommand(context: string; keys: string; action: string; args: varargs[untyped]): untyped		133
+nim	addCommand	absytree_runtime.html#addCommand,string,string,proc)	proc addCommand(context: string; keys: string; action: proc (): void)		147
+nim	addCommandBlock	absytree_runtime.html#addCommandBlock.t,static[string],string,untyped	template addCommandBlock(context: static[string]; keys: string; body: untyped): untyped		152
+nim	addEditorCommandBlock	absytree_runtime.html#addEditorCommandBlock.t,static[string],string,untyped	template addEditorCommandBlock(mode: static[string]; keys: string; body: untyped): untyped		157
+nim	addEditorCommand	absytree_runtime.html#addEditorCommand,string,string,proc)	proc addEditorCommand(mode: string; keys: string; action: proc (): void)		162
+nim	addEditorCommand	absytree_runtime.html#addEditorCommand.m,static[string],string,string,varargs[untyped]	macro addEditorCommand(mode: static[string]; keys: string; action: string;\n                 args: varargs[untyped]): untyped		167
+nim	addTextCommandBlock	absytree_runtime.html#addTextCommandBlock.t,static[string],string,untyped	template addTextCommandBlock(mode: static[string]; keys: string; body: untyped): untyped		183
+nim	addTextCommand	absytree_runtime.html#addTextCommand,string,string,proc(TextDocumentEditor)	proc addTextCommand(mode: string; keys: string;\n               action: proc (editor: TextDocumentEditor): void)		189
+nim	addTextCommand	absytree_runtime.html#addTextCommand.m,static[string],string,string,varargs[untyped]	macro addTextCommand(mode: static[string]; keys: string; action: string;\n               args: varargs[untyped]): untyped		194
+nim	setTextInputHandler	absytree_runtime.html#setTextInputHandler,string,proc(TextDocumentEditor,string)	proc setTextInputHandler(context: string; action: proc (editor: TextDocumentEditor;\n    input: string): bool)		209
+nim	addAstCommandBlock	absytree_runtime.html#addAstCommandBlock.t,static[string],string,untyped	template addAstCommandBlock(mode: static[string]; keys: string; body: untyped): untyped		217
+nim	addAstCommand	absytree_runtime.html#addAstCommand,string,string,proc(AstDocumentEditor)	proc addAstCommand(mode: string; keys: string;\n              action: proc (editor: AstDocumentEditor): void)		223
+nim	addAstCommand	absytree_runtime.html#addAstCommand.m,static[string],string,string,varargs[untyped]	macro addAstCommand(mode: static[string]; keys: string; action: string;\n              args: varargs[untyped]): untyped		228
+nim	wasmexport	absytree_runtime.html#wasmexport.t,typed	template wasmexport(t: typed): untyped		281
+nimgrp	addcallback	absytree_runtime.html#addCallback-procs-all	proc		25
+nimgrp	runaction	absytree_runtime.html#runAction-procs-all	proc		77

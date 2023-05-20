@@ -2,55 +2,57 @@ nimTitle	scripting_api	_._/src/scripting_api.html	module scripting_api		0
 nim	EditorId	_._/src/scripting_api.html#EditorId	type EditorId		4
 nim	Text	_._/src/scripting_api.html#Text	EditorType.Text		5
 nim	Ast	_._/src/scripting_api.html#Ast	EditorType.Ast		5
+nim	Model	_._/src/scripting_api.html#Model	EditorType.Model		5
 nim	Other	_._/src/scripting_api.html#Other	EditorType.Other		5
 nim	EditorType	_._/src/scripting_api.html#EditorType	enum EditorType		5
 nim	TextDocumentEditor	_._/src/scripting_api.html#TextDocumentEditor	object TextDocumentEditor		7
 nim	AstDocumentEditor	_._/src/scripting_api.html#AstDocumentEditor	object AstDocumentEditor		9
-nim	SelectorPopup	_._/src/scripting_api.html#SelectorPopup	object SelectorPopup		11
-nim	Cursor	_._/src/scripting_api.html#Cursor	tuple Cursor		14
-nim	Selection	_._/src/scripting_api.html#Selection	tuple Selection		15
-nim	Config	_._/src/scripting_api.html#Config	SelectionCursor.Config		16
-nim	Both	_._/src/scripting_api.html#Both	SelectionCursor.Both		16
-nim	First	_._/src/scripting_api.html#First	SelectionCursor.First		16
-nim	Last	_._/src/scripting_api.html#Last	SelectionCursor.Last		16
-nim	LastToFirst	_._/src/scripting_api.html#LastToFirst	SelectionCursor.LastToFirst		16
-nim	SelectionCursor	_._/src/scripting_api.html#SelectionCursor	enum SelectionCursor		16
-nim	None	_._/src/scripting_api.html#None	LineNumbers.None		17
-nim	Absolute	_._/src/scripting_api.html#Absolute	LineNumbers.Absolute		17
-nim	Relative	_._/src/scripting_api.html#Relative	LineNumbers.Relative		17
-nim	LineNumbers	_._/src/scripting_api.html#LineNumbers	enum LineNumbers		17
-nim	Gui	_._/src/scripting_api.html#Gui	Backend.Gui		18
-nim	Terminal	_._/src/scripting_api.html#Terminal	Backend.Terminal		18
-nim	Browser	_._/src/scripting_api.html#Browser	Backend.Browser		18
-nim	Backend	_._/src/scripting_api.html#Backend	enum Backend		18
-nim	Selections	_._/src/scripting_api.html#Selections	type Selections		20
-nim	normalize	_._/src/scripting_api.html#normalize,Selections	proc normalize(self: var Selections)		22
-nim	normalized	_._/src/scripting_api.html#normalized,Selections	proc normalized(self: Selections): Selections		25
-nim	newEditorId	_._/src/scripting_api.html#newEditorId	proc newEditorId(): EditorId		29
-nim	`$`	_._/src/scripting_api.html#$,Cursor	proc `$`(cursor: Cursor): string		34
-nim	`$`	_._/src/scripting_api.html#$,Selection	proc `$`(selection: Selection): string		37
-nim	`<`	_._/src/scripting_api.html#<,Cursor,Cursor	proc `<`(a: Cursor; b: Cursor): bool		40
-nim	`>`	_._/src/scripting_api.html#>,Cursor,Cursor	proc `>`(a: Cursor; b: Cursor): bool		49
-nim	min	_._/src/scripting_api.html#min,Cursor,Cursor	proc min(a: Cursor; b: Cursor): Cursor		57
-nim	max	_._/src/scripting_api.html#max,Cursor,Cursor	proc max(a: Cursor; b: Cursor): Cursor		62
-nim	isBackwards	_._/src/scripting_api.html#isBackwards,Selection	proc isBackwards(selection: Selection): bool		67
-nim	normalized	_._/src/scripting_api.html#normalized,Selection	proc normalized(selection: Selection): Selection		71
-nim	reverse	_._/src/scripting_api.html#reverse,Selection	proc reverse(selection: Selection): Selection		79
-nim	isEmpty	_._/src/scripting_api.html#isEmpty,Selection	proc isEmpty(selection: Selection): bool		81
-nim	contains	_._/src/scripting_api.html#contains,Selection,Cursor	proc contains(selection: Selection; cursor: Cursor): bool		83
-nim	contains	_._/src/scripting_api.html#contains,Selection,Selection	proc contains(selection: Selection; other: Selection): bool		84
-nim	contains	_._/src/scripting_api.html#contains,Selections,Cursor	proc contains(self: Selections; cursor: Cursor): bool		86
-nim	contains	_._/src/scripting_api.html#contains,Selections,Selection	proc contains(self: Selections; other: Selection): bool		87
-nim	`or`	_._/src/scripting_api.html#or,Selection,Selection	proc `or`(a: Selection; b: Selection): Selection		89
-nim	toSelection	_._/src/scripting_api.html#toSelection,Cursor	proc toSelection(cursor: Cursor): Selection		94
-nim	toSelection	_._/src/scripting_api.html#toSelection,Cursor,Selection,SelectionCursor	proc toSelection(cursor: Cursor; default: Selection; which: SelectionCursor): Selection		97
-nim	subtract	_._/src/scripting_api.html#subtract,Cursor,Selection	proc subtract(cursor: Cursor; selection: Selection): Cursor		105
-nim	subtract	_._/src/scripting_api.html#subtract,Selection,Selection	proc subtract(self: Selection; other: Selection): Selection		120
-nim	add	_._/src/scripting_api.html#add,Cursor,Selection	proc add(cursor: Cursor; selection: Selection): Cursor		123
-nim	add	_._/src/scripting_api.html#add,Selection,Selection	proc add(self: Selection; other: Selection): Selection		140
-nimgrp	contains	_._/src/scripting_api.html#contains-procs-all	proc		83
-nimgrp	$	_._/src/scripting_api.html#$-procs-all	proc		34
-nimgrp	add	_._/src/scripting_api.html#add-procs-all	proc		123
-nimgrp	normalized	_._/src/scripting_api.html#normalized-procs-all	proc		25
-nimgrp	toselection	_._/src/scripting_api.html#toSelection-procs-all	proc		94
-nimgrp	subtract	_._/src/scripting_api.html#subtract-procs-all	proc		105
+nim	ModelDocumentEditor	_._/src/scripting_api.html#ModelDocumentEditor	object ModelDocumentEditor		11
+nim	SelectorPopup	_._/src/scripting_api.html#SelectorPopup	object SelectorPopup		13
+nim	Cursor	_._/src/scripting_api.html#Cursor	tuple Cursor		16
+nim	Selection	_._/src/scripting_api.html#Selection	tuple Selection		17
+nim	Config	_._/src/scripting_api.html#Config	SelectionCursor.Config		18
+nim	Both	_._/src/scripting_api.html#Both	SelectionCursor.Both		18
+nim	First	_._/src/scripting_api.html#First	SelectionCursor.First		18
+nim	Last	_._/src/scripting_api.html#Last	SelectionCursor.Last		18
+nim	LastToFirst	_._/src/scripting_api.html#LastToFirst	SelectionCursor.LastToFirst		18
+nim	SelectionCursor	_._/src/scripting_api.html#SelectionCursor	enum SelectionCursor		18
+nim	None	_._/src/scripting_api.html#None	LineNumbers.None		19
+nim	Absolute	_._/src/scripting_api.html#Absolute	LineNumbers.Absolute		19
+nim	Relative	_._/src/scripting_api.html#Relative	LineNumbers.Relative		19
+nim	LineNumbers	_._/src/scripting_api.html#LineNumbers	enum LineNumbers		19
+nim	Gui	_._/src/scripting_api.html#Gui	Backend.Gui		20
+nim	Terminal	_._/src/scripting_api.html#Terminal	Backend.Terminal		20
+nim	Browser	_._/src/scripting_api.html#Browser	Backend.Browser		20
+nim	Backend	_._/src/scripting_api.html#Backend	enum Backend		20
+nim	Selections	_._/src/scripting_api.html#Selections	type Selections		22
+nim	normalize	_._/src/scripting_api.html#normalize,Selections	proc normalize(self: var Selections)		24
+nim	normalized	_._/src/scripting_api.html#normalized,Selections	proc normalized(self: Selections): Selections		27
+nim	newEditorId	_._/src/scripting_api.html#newEditorId	proc newEditorId(): EditorId		31
+nim	`$`	_._/src/scripting_api.html#$,Cursor	proc `$`(cursor: Cursor): string		36
+nim	`$`	_._/src/scripting_api.html#$,Selection	proc `$`(selection: Selection): string		39
+nim	`<`	_._/src/scripting_api.html#<,Cursor,Cursor	proc `<`(a: Cursor; b: Cursor): bool		42
+nim	`>`	_._/src/scripting_api.html#>,Cursor,Cursor	proc `>`(a: Cursor; b: Cursor): bool		51
+nim	min	_._/src/scripting_api.html#min,Cursor,Cursor	proc min(a: Cursor; b: Cursor): Cursor		59
+nim	max	_._/src/scripting_api.html#max,Cursor,Cursor	proc max(a: Cursor; b: Cursor): Cursor		64
+nim	isBackwards	_._/src/scripting_api.html#isBackwards,Selection	proc isBackwards(selection: Selection): bool		69
+nim	normalized	_._/src/scripting_api.html#normalized,Selection	proc normalized(selection: Selection): Selection		73
+nim	reverse	_._/src/scripting_api.html#reverse,Selection	proc reverse(selection: Selection): Selection		81
+nim	isEmpty	_._/src/scripting_api.html#isEmpty,Selection	proc isEmpty(selection: Selection): bool		83
+nim	contains	_._/src/scripting_api.html#contains,Selection,Cursor	proc contains(selection: Selection; cursor: Cursor): bool		85
+nim	contains	_._/src/scripting_api.html#contains,Selection,Selection	proc contains(selection: Selection; other: Selection): bool		86
+nim	contains	_._/src/scripting_api.html#contains,Selections,Cursor	proc contains(self: Selections; cursor: Cursor): bool		88
+nim	contains	_._/src/scripting_api.html#contains,Selections,Selection	proc contains(self: Selections; other: Selection): bool		89
+nim	`or`	_._/src/scripting_api.html#or,Selection,Selection	proc `or`(a: Selection; b: Selection): Selection		91
+nim	toSelection	_._/src/scripting_api.html#toSelection,Cursor	proc toSelection(cursor: Cursor): Selection		96
+nim	toSelection	_._/src/scripting_api.html#toSelection,Cursor,Selection,SelectionCursor	proc toSelection(cursor: Cursor; default: Selection; which: SelectionCursor): Selection		99
+nim	subtract	_._/src/scripting_api.html#subtract,Cursor,Selection	proc subtract(cursor: Cursor; selection: Selection): Cursor		107
+nim	subtract	_._/src/scripting_api.html#subtract,Selection,Selection	proc subtract(self: Selection; other: Selection): Selection		122
+nim	add	_._/src/scripting_api.html#add,Cursor,Selection	proc add(cursor: Cursor; selection: Selection): Cursor		125
+nim	add	_._/src/scripting_api.html#add,Selection,Selection	proc add(self: Selection; other: Selection): Selection		142
+nimgrp	contains	_._/src/scripting_api.html#contains-procs-all	proc		85
+nimgrp	$	_._/src/scripting_api.html#$-procs-all	proc		36
+nimgrp	add	_._/src/scripting_api.html#add-procs-all	proc		125
+nimgrp	normalized	_._/src/scripting_api.html#normalized-procs-all	proc		27
+nimgrp	toselection	_._/src/scripting_api.html#toSelection-procs-all	proc		96
+nimgrp	subtract	_._/src/scripting_api.html#subtract-procs-all	proc		107
