@@ -1,0 +1,9 @@
+nimTitle	event	_._/src/misc/event.html	module src/misc/event		0
+nim	Event	_._/src/misc/event.html#Event	object Event		4
+nim	subscribe	_._/src/misc/event.html#subscribe,Event[T: void],	proc subscribe[T: void](event: var Event[T]; callback: () -> void): Id		7
+nim	subscribe	_._/src/misc/event.html#subscribe,Event[T],	proc subscribe[T](event: var Event[T]; callback: (T) -> void): Id		11
+nim	unsubscribe	_._/src/misc/event.html#unsubscribe,Event[T],Id	proc unsubscribe[T](event: var Event[T]; id: Id)		15
+nim	invoke	_._/src/misc/event.html#invoke,Event[T: void]	proc invoke[T: void](event: var Event[T])		21
+nim	invoke	_._/src/misc/event.html#invoke,Event[T],T	proc invoke[T](event: var Event[T]; arg: T)		25
+nimgrp	subscribe	_._/src/misc/event.html#subscribe-procs-all	proc		7
+nimgrp	invoke	_._/src/misc/event.html#invoke-procs-all	proc		21

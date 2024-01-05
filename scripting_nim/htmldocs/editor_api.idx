@@ -1,76 +1,89 @@
-nimTitle	editor_api	editor_api.html	module editor_api		0
+nimTitle	editor_api	editor_api.html	module scripting/editor_api		0
 nim	getBackend	editor_api.html#getBackend	proc getBackend(): Backend		13
-nim	saveAppState	editor_api.html#saveAppState	proc saveAppState()		15
-nim	requestRender	editor_api.html#requestRender,bool	proc requestRender(redrawEverything: bool = false)		17
-nim	setHandleInputs	editor_api.html#setHandleInputs,string,bool	proc setHandleInputs(context: string; value: bool)		19
-nim	setHandleActions	editor_api.html#setHandleActions,string,bool	proc setHandleActions(context: string; value: bool)		21
-nim	setConsumeAllActions	editor_api.html#setConsumeAllActions,string,bool	proc setConsumeAllActions(context: string; value: bool)		23
-nim	setConsumeAllInput	editor_api.html#setConsumeAllInput,string,bool	proc setConsumeAllInput(context: string; value: bool)		25
-nim	clearWorkspaceCaches	editor_api.html#clearWorkspaceCaches	proc clearWorkspaceCaches()		27
-nim	openGithubWorkspace	editor_api.html#openGithubWorkspace,string,string,string	proc openGithubWorkspace(user: string; repository: string; branchOrHash: string)		29
-nim	openAbsytreeServerWorkspace	editor_api.html#openAbsytreeServerWorkspace,string	proc openAbsytreeServerWorkspace(url: string)		32
-nim	openLocalWorkspace	editor_api.html#openLocalWorkspace,string	proc openLocalWorkspace(path: string)		34
-nim	getFlag	editor_api.html#getFlag,string,bool	proc getFlag(flag: string; default: bool = false): bool		36
-nim	setFlag	editor_api.html#setFlag,string,bool	proc setFlag(flag: string; value: bool)		38
-nim	toggleFlag	editor_api.html#toggleFlag,string	proc toggleFlag(flag: string)		40
-nim	setOption	editor_api.html#setOption,string,JsonNode	proc setOption(option: string; value: JsonNode)		42
-nim	quit	editor_api.html#quit	proc quit()		44
-nim	changeFontSize	editor_api.html#changeFontSize,float32	proc changeFontSize(amount: float32)		46
-nim	changeLayoutProp	editor_api.html#changeLayoutProp,string,float32	proc changeLayoutProp(prop: string; change: float32)		48
-nim	toggleStatusBarLocation	editor_api.html#toggleStatusBarLocation	proc toggleStatusBarLocation()		50
-nim	createView	editor_api.html#createView	proc createView()		52
-nim	closeCurrentView	editor_api.html#closeCurrentView	proc closeCurrentView()		54
-nim	moveCurrentViewToTop	editor_api.html#moveCurrentViewToTop	proc moveCurrentViewToTop()		56
-nim	nextView	editor_api.html#nextView	proc nextView()		58
-nim	prevView	editor_api.html#prevView	proc prevView()		60
-nim	moveCurrentViewPrev	editor_api.html#moveCurrentViewPrev	proc moveCurrentViewPrev()		62
-nim	moveCurrentViewNext	editor_api.html#moveCurrentViewNext	proc moveCurrentViewNext()		64
-nim	setLayout	editor_api.html#setLayout,string	proc setLayout(layout: string)		66
-nim	commandLine	editor_api.html#commandLine,string	proc commandLine(initialValue: string = "")		68
-nim	exitCommandLine	editor_api.html#exitCommandLine	proc exitCommandLine()		70
-nim	executeCommandLine	editor_api.html#executeCommandLine	proc executeCommandLine(): bool		72
-nim	writeFile	editor_api.html#writeFile,string,bool	proc writeFile(path: string = ""; app: bool = false)		74
-nim	loadFile	editor_api.html#loadFile,string	proc loadFile(path: string = "")		76
-nim	openFile	editor_api.html#openFile,string,bool	proc openFile(path: string; app: bool = false)		78
-nim	removeFromLocalStorage	editor_api.html#removeFromLocalStorage	proc removeFromLocalStorage()		80
-nim	loadTheme	editor_api.html#loadTheme,string	proc loadTheme(name: string)		84
-nim	chooseTheme	editor_api.html#chooseTheme	proc chooseTheme()		86
-nim	chooseFile	editor_api.html#chooseFile,string	proc chooseFile(view: string = "new")		88
-nim	setGithubAccessToken	editor_api.html#setGithubAccessToken,string	proc setGithubAccessToken(token: string)		90
-nim	reloadConfig	editor_api.html#reloadConfig	proc reloadConfig()		93
-nim	logOptions	editor_api.html#logOptions	proc logOptions()		95
-nim	clearCommands	editor_api.html#clearCommands,string	proc clearCommands(context: string)		97
-nim	getAllEditors	editor_api.html#getAllEditors	proc getAllEditors(): seq[EditorId]		99
-nim	setMode	editor_api.html#setMode,string	proc setMode(mode: string)		101
-nim	mode	editor_api.html#mode	proc mode(): string		103
-nim	getContextWithMode	editor_api.html#getContextWithMode,string	proc getContextWithMode(context: string): string		105
-nim	scriptRunAction	editor_api.html#scriptRunAction,string,string	proc scriptRunAction(action: string; arg: string)		107
-nim	scriptLog	editor_api.html#scriptLog,string	proc scriptLog(message: string)		109
-nim	addCommandScript	editor_api.html#addCommandScript,string,string,string,string	proc addCommandScript(context: string; keys: string; action: string; arg: string = "")		111
-nim	removeCommand	editor_api.html#removeCommand,string,string	proc removeCommand(context: string; keys: string)		115
-nim	getActivePopup	editor_api.html#getActivePopup	proc getActivePopup(): EditorId		117
-nim	getActiveEditor	editor_api.html#getActiveEditor	proc getActiveEditor(): EditorId		119
-nim	getActiveEditor2	editor_api.html#getActiveEditor2	proc getActiveEditor2(): EditorId		121
-nim	loadCurrentConfig	editor_api.html#loadCurrentConfig	proc loadCurrentConfig()		124
-nim	sourceCurrentDocument	editor_api.html#sourceCurrentDocument	proc sourceCurrentDocument()		128
-nim	getEditor	editor_api.html#getEditor,int	proc getEditor(index: int): EditorId		133
-nim	scriptIsTextEditor	editor_api.html#scriptIsTextEditor,EditorId	proc scriptIsTextEditor(editorId: EditorId): bool		135
-nim	scriptIsAstEditor	editor_api.html#scriptIsAstEditor,EditorId	proc scriptIsAstEditor(editorId: EditorId): bool		137
-nim	scriptIsModelEditor	editor_api.html#scriptIsModelEditor,EditorId	proc scriptIsModelEditor(editorId: EditorId): bool		139
-nim	scriptRunActionFor	editor_api.html#scriptRunActionFor,EditorId,string,string	proc scriptRunActionFor(editorId: EditorId; action: string; arg: string)		141
-nim	scriptInsertTextInto	editor_api.html#scriptInsertTextInto,EditorId,string	proc scriptInsertTextInto(editorId: EditorId; text: string)		144
-nim	scriptTextEditorSelection	editor_api.html#scriptTextEditorSelection,EditorId	proc scriptTextEditorSelection(editorId: EditorId): Selection		146
-nim	scriptSetTextEditorSelection	editor_api.html#scriptSetTextEditorSelection,EditorId,Selection	proc scriptSetTextEditorSelection(editorId: EditorId; selection: Selection)		148
-nim	scriptTextEditorSelections	editor_api.html#scriptTextEditorSelections,EditorId	proc scriptTextEditorSelections(editorId: EditorId): seq[Selection]		151
-nim	scriptSetTextEditorSelections	editor_api.html#scriptSetTextEditorSelections,EditorId,seq[Selection]	proc scriptSetTextEditorSelections(editorId: EditorId; selections: seq[Selection])		153
-nim	scriptGetTextEditorLine	editor_api.html#scriptGetTextEditorLine,EditorId,int	proc scriptGetTextEditorLine(editorId: EditorId; line: int): string		157
-nim	scriptGetTextEditorLineCount	editor_api.html#scriptGetTextEditorLineCount,EditorId	proc scriptGetTextEditorLineCount(editorId: EditorId): int		159
-nim	scriptGetOptionInt	editor_api.html#scriptGetOptionInt,string,int	proc scriptGetOptionInt(path: string; default: int): int		161
-nim	scriptGetOptionFloat	editor_api.html#scriptGetOptionFloat,string,float	proc scriptGetOptionFloat(path: string; default: float): float		163
-nim	scriptGetOptionBool	editor_api.html#scriptGetOptionBool,string,bool	proc scriptGetOptionBool(path: string; default: bool): bool		165
-nim	scriptGetOptionString	editor_api.html#scriptGetOptionString,string,string	proc scriptGetOptionString(path: string; default: string): string		167
-nim	scriptSetOptionInt	editor_api.html#scriptSetOptionInt,string,int	proc scriptSetOptionInt(path: string; value: int)		169
-nim	scriptSetOptionFloat	editor_api.html#scriptSetOptionFloat,string,float	proc scriptSetOptionFloat(path: string; value: float)		171
-nim	scriptSetOptionBool	editor_api.html#scriptSetOptionBool,string,bool	proc scriptSetOptionBool(path: string; value: bool)		173
-nim	scriptSetOptionString	editor_api.html#scriptSetOptionString,string,string	proc scriptSetOptionString(path: string; value: string)		175
-nim	scriptSetCallback	editor_api.html#scriptSetCallback,string,int	proc scriptSetCallback(path: string; id: int)		177
+nim	toggleShowDrawnNodes	editor_api.html#toggleShowDrawnNodes	proc toggleShowDrawnNodes()		15
+nim	saveAppState	editor_api.html#saveAppState	proc saveAppState()		17
+nim	requestRender	editor_api.html#requestRender,bool	proc requestRender(redrawEverything: bool = false)		19
+nim	setHandleInputs	editor_api.html#setHandleInputs,string,bool	proc setHandleInputs(context: string; value: bool)		21
+nim	setHandleActions	editor_api.html#setHandleActions,string,bool	proc setHandleActions(context: string; value: bool)		23
+nim	setConsumeAllActions	editor_api.html#setConsumeAllActions,string,bool	proc setConsumeAllActions(context: string; value: bool)		25
+nim	setConsumeAllInput	editor_api.html#setConsumeAllInput,string,bool	proc setConsumeAllInput(context: string; value: bool)		27
+nim	clearWorkspaceCaches	editor_api.html#clearWorkspaceCaches	proc clearWorkspaceCaches()		29
+nim	openGithubWorkspace	editor_api.html#openGithubWorkspace,string,string,string	proc openGithubWorkspace(user: string; repository: string; branchOrHash: string)		31
+nim	openAbsytreeServerWorkspace	editor_api.html#openAbsytreeServerWorkspace,string	proc openAbsytreeServerWorkspace(url: string)		34
+nim	callScriptAction	editor_api.html#callScriptAction,string,JsonNode	proc callScriptAction(context: string; args: JsonNode): JsonNode		36
+nim	addScriptAction	editor_api.html#addScriptAction,string,string,seq[tuple[string,string]],string	proc addScriptAction(name: string; docs: string = "";\n                params: seq[tuple[name: string, typ: string]] = @[];\n                returnType: string = "")		38
+nim	openLocalWorkspace	editor_api.html#openLocalWorkspace,string	proc openLocalWorkspace(path: string)		43
+nim	getFlag	editor_api.html#getFlag,string,bool	proc getFlag(flag: string; default: bool = false): bool		45
+nim	setFlag	editor_api.html#setFlag,string,bool	proc setFlag(flag: string; value: bool)		47
+nim	toggleFlag	editor_api.html#toggleFlag,string	proc toggleFlag(flag: string)		49
+nim	setOption	editor_api.html#setOption,string,JsonNode	proc setOption(option: string; value: JsonNode)		51
+nim	quit	editor_api.html#quit	proc quit()		53
+nim	help	editor_api.html#help,string	proc help(about: string = "")		55
+nim	changeFontSize	editor_api.html#changeFontSize,float32	proc changeFontSize(amount: float32)		57
+nim	changeLayoutProp	editor_api.html#changeLayoutProp,string,float32	proc changeLayoutProp(prop: string; change: float32)		59
+nim	toggleStatusBarLocation	editor_api.html#toggleStatusBarLocation	proc toggleStatusBarLocation()		61
+nim	createAndAddView	editor_api.html#createAndAddView	proc createAndAddView()		63
+nim	logs	editor_api.html#logs	proc logs()		65
+nim	toggleConsoleLogger	editor_api.html#toggleConsoleLogger	proc toggleConsoleLogger()		67
+nim	closeCurrentView	editor_api.html#closeCurrentView	proc closeCurrentView()		69
+nim	moveCurrentViewToTop	editor_api.html#moveCurrentViewToTop	proc moveCurrentViewToTop()		71
+nim	nextView	editor_api.html#nextView	proc nextView()		73
+nim	prevView	editor_api.html#prevView	proc prevView()		75
+nim	moveCurrentViewPrev	editor_api.html#moveCurrentViewPrev	proc moveCurrentViewPrev()		77
+nim	moveCurrentViewNext	editor_api.html#moveCurrentViewNext	proc moveCurrentViewNext()		79
+nim	setLayout	editor_api.html#setLayout,string	proc setLayout(layout: string)		81
+nim	commandLine	editor_api.html#commandLine,string	proc commandLine(initialValue: string = "")		83
+nim	exitCommandLine	editor_api.html#exitCommandLine	proc exitCommandLine()		85
+nim	executeCommandLine	editor_api.html#executeCommandLine	proc executeCommandLine(): bool		87
+nim	writeFile	editor_api.html#writeFile,string,bool	proc writeFile(path: string = ""; app: bool = false)		89
+nim	loadFile	editor_api.html#loadFile,string	proc loadFile(path: string = "")		91
+nim	removeFromLocalStorage	editor_api.html#removeFromLocalStorage	proc removeFromLocalStorage()		93
+nim	loadTheme	editor_api.html#loadTheme,string	proc loadTheme(name: string)		97
+nim	chooseTheme	editor_api.html#chooseTheme	proc chooseTheme()		99
+nim	chooseFile	editor_api.html#chooseFile,string	proc chooseFile(view: string = "new")		101
+nim	chooseOpen	editor_api.html#chooseOpen,string	proc chooseOpen(view: string = "new")		106
+nim	openPreviousEditor	editor_api.html#openPreviousEditor	proc openPreviousEditor()		108
+nim	openNextEditor	editor_api.html#openNextEditor	proc openNextEditor()		110
+nim	setGithubAccessToken	editor_api.html#setGithubAccessToken,string	proc setGithubAccessToken(token: string)		112
+nim	reloadConfig	editor_api.html#reloadConfig	proc reloadConfig()		115
+nim	logOptions	editor_api.html#logOptions	proc logOptions()		117
+nim	clearCommands	editor_api.html#clearCommands,string	proc clearCommands(context: string)		119
+nim	getAllEditors	editor_api.html#getAllEditors	proc getAllEditors(): seq[EditorId]		121
+nim	setMode	editor_api.html#setMode,string	proc setMode(mode: string)		123
+nim	mode	editor_api.html#mode	proc mode(): string		125
+nim	getContextWithMode	editor_api.html#getContextWithMode,string	proc getContextWithMode(context: string): string		127
+nim	scriptRunAction	editor_api.html#scriptRunAction,string,string	proc scriptRunAction(action: string; arg: string)		129
+nim	scriptLog	editor_api.html#scriptLog,string	proc scriptLog(message: string)		131
+nim	changeAnimationSpeed	editor_api.html#changeAnimationSpeed,float	proc changeAnimationSpeed(factor: float)		133
+nim	setLeader	editor_api.html#setLeader,string	proc setLeader(leader: string)		135
+nim	setLeaders	editor_api.html#setLeaders,seq[string]	proc setLeaders(leaders: seq[string])		137
+nim	addLeader	editor_api.html#addLeader,string	proc addLeader(leader: string)		139
+nim	addCommandScript	editor_api.html#addCommandScript,string,string,string,string	proc addCommandScript(context: string; keys: string; action: string; arg: string = "")		141
+nim	removeCommand	editor_api.html#removeCommand,string,string	proc removeCommand(context: string; keys: string)		145
+nim	getActivePopup	editor_api.html#getActivePopup	proc getActivePopup(): EditorId		147
+nim	getActiveEditor	editor_api.html#getActiveEditor	proc getActiveEditor(): EditorId		149
+nim	getActiveEditor2	editor_api.html#getActiveEditor2	proc getActiveEditor2(): EditorId		151
+nim	loadCurrentConfig	editor_api.html#loadCurrentConfig	proc loadCurrentConfig()		154
+nim	logRootNode	editor_api.html#logRootNode	proc logRootNode()		157
+nim	sourceCurrentDocument	editor_api.html#sourceCurrentDocument	proc sourceCurrentDocument()		159
+nim	getEditor	editor_api.html#getEditor,int	proc getEditor(index: int): EditorId		164
+nim	scriptIsTextEditor	editor_api.html#scriptIsTextEditor,EditorId	proc scriptIsTextEditor(editorId: EditorId): bool		166
+nim	scriptIsAstEditor	editor_api.html#scriptIsAstEditor,EditorId	proc scriptIsAstEditor(editorId: EditorId): bool		168
+nim	scriptIsModelEditor	editor_api.html#scriptIsModelEditor,EditorId	proc scriptIsModelEditor(editorId: EditorId): bool		170
+nim	scriptRunActionFor	editor_api.html#scriptRunActionFor,EditorId,string,string	proc scriptRunActionFor(editorId: EditorId; action: string; arg: string)		172
+nim	scriptInsertTextInto	editor_api.html#scriptInsertTextInto,EditorId,string	proc scriptInsertTextInto(editorId: EditorId; text: string)		175
+nim	scriptTextEditorSelection	editor_api.html#scriptTextEditorSelection,EditorId	proc scriptTextEditorSelection(editorId: EditorId): Selection		177
+nim	scriptSetTextEditorSelection	editor_api.html#scriptSetTextEditorSelection,EditorId,Selection	proc scriptSetTextEditorSelection(editorId: EditorId; selection: Selection)		179
+nim	scriptTextEditorSelections	editor_api.html#scriptTextEditorSelections,EditorId	proc scriptTextEditorSelections(editorId: EditorId): seq[Selection]		182
+nim	scriptSetTextEditorSelections	editor_api.html#scriptSetTextEditorSelections,EditorId,seq[Selection]	proc scriptSetTextEditorSelections(editorId: EditorId; selections: seq[Selection])		184
+nim	scriptGetTextEditorLine	editor_api.html#scriptGetTextEditorLine,EditorId,int	proc scriptGetTextEditorLine(editorId: EditorId; line: int): string		188
+nim	scriptGetTextEditorLineCount	editor_api.html#scriptGetTextEditorLineCount,EditorId	proc scriptGetTextEditorLineCount(editorId: EditorId): int		190
+nim	scriptGetOptionInt	editor_api.html#scriptGetOptionInt,string,int	proc scriptGetOptionInt(path: string; default: int): int		192
+nim	scriptGetOptionFloat	editor_api.html#scriptGetOptionFloat,string,float	proc scriptGetOptionFloat(path: string; default: float): float		194
+nim	scriptGetOptionBool	editor_api.html#scriptGetOptionBool,string,bool	proc scriptGetOptionBool(path: string; default: bool): bool		196
+nim	scriptGetOptionString	editor_api.html#scriptGetOptionString,string,string	proc scriptGetOptionString(path: string; default: string): string		198
+nim	scriptSetOptionInt	editor_api.html#scriptSetOptionInt,string,int	proc scriptSetOptionInt(path: string; value: int)		200
+nim	scriptSetOptionFloat	editor_api.html#scriptSetOptionFloat,string,float	proc scriptSetOptionFloat(path: string; value: float)		202
+nim	scriptSetOptionBool	editor_api.html#scriptSetOptionBool,string,bool	proc scriptSetOptionBool(path: string; value: bool)		204
+nim	scriptSetOptionString	editor_api.html#scriptSetOptionString,string,string	proc scriptSetOptionString(path: string; value: string)		206
+nim	scriptSetCallback	editor_api.html#scriptSetCallback,string,int	proc scriptSetCallback(path: string; id: int)		208

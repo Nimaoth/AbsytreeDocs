@@ -1,0 +1,34 @@
+nimTitle	id	_._/src/misc/id.html	module src/misc/id		0
+nim	Oid	_._/src/misc/id.html#Oid	object Oid		29
+nim	Id	_._/src/misc/id.html#Id	type Id		35
+nim	handleHexChar	_._/src/misc/id.html#handleHexChar,char	proc handleHexChar(c: char): int		48
+nim	`==`	_._/src/misc/id.html#==,Oid,Oid	proc `==`(oid1: Oid; oid2: Oid): bool		55
+nim	hash	_._/src/misc/id.html#hash,Oid	proc hash(oid: Oid): Hash		80
+nim	hexbyte	_._/src/misc/id.html#hexbyte,char	proc hexbyte(hex: char): int		88
+nim	`$`	_._/src/misc/id.html#$,Oid	proc `$`(oid: Oid): string		91
+nim	constructOid	_._/src/misc/id.html#constructOid,int32,int32,int32	proc constructOid(time: int32; fuzz: int32; count: int32): Oid		113
+nim	deconstruct	_._/src/misc/id.html#deconstruct,Oid	proc deconstruct(oid: Oid): tuple[time: int32, fuzz: int32, count: int32]		121
+nim	parseOid	_._/src/misc/id.html#parseOid,string	proc parseOid(str: string): Oid		124
+nim	toCString	_._/src/misc/id.html#toCString,Oid	proc toCString(oid: Oid): cstring		155
+nim	bigEndian32	_._/src/misc/id.html#bigEndian32,int32	proc bigEndian32(b: int32): int32		190
+nim	genOid	_._/src/misc/id.html#genOid	proc genOid(): Oid		217
+nim	generatedTime	_._/src/misc/id.html#generatedTime,Oid	proc generatedTime(oid: Oid): Time		225
+nim	newId	_._/src/misc/id.html#newId	proc newId(): Id		232
+nim	`$`	_._/src/misc/id.html#$,Id	proc `$`(id: Id): string		235
+nim	idToString	_._/src/misc/id.html#idToString,Id	proc idToString(id: Id): cstring		238
+nim	`==`	_._/src/misc/id.html#==,Id,Id	proc `==`(idA: Id; idB: Id): bool		241
+nim	hash	_._/src/misc/id.html#hash,Id	proc hash(id: Id): Hash		244
+nim	idNone	_._/src/misc/id.html#idNone	proc idNone(): Id		250
+nim	isNone	_._/src/misc/id.html#isNone,Id	proc isNone(id: Id): bool		253
+nim	isSome	_._/src/misc/id.html#isSome,Id	proc isSome(id: Id): bool		254
+nim	parseId	_._/src/misc/id.html#parseId,string	proc parseId(s: string): Id		256
+nim	timestamp	_._/src/misc/id.html#timestamp,Id	proc timestamp(id: Id): Time		261
+nim	null	_._/src/misc/id.html#null	let null		264
+nim	fromJsonHook	_._/src/misc/id.html#fromJsonHook,Id,JsonNode	proc fromJsonHook(id: var Id; json: JsonNode)		266
+nim	toJson	_._/src/misc/id.html#toJson,Id	proc toJson(id: Id; opt = initToJsonOptions()): JsonNode		272
+nim	construct	_._/src/misc/id.html#construct,int32,int32,int32	proc construct(time, fuzz, count: int32): Id		275
+nim	deconstruct	_._/src/misc/id.html#deconstruct,Id	proc deconstruct(id: Id): tuple[time: int32, fuzz: int32, count: int32]		278
+nimgrp	$	_._/src/misc/id.html#$-procs-all	proc		91
+nimgrp	deconstruct	_._/src/misc/id.html#deconstruct-procs-all	proc		121
+nimgrp	==	_._/src/misc/id.html#==-procs-all	proc		55
+nimgrp	hash	_._/src/misc/id.html#hash-procs-all	proc		80

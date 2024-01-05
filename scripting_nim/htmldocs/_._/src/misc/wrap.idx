@@ -1,0 +1,3 @@
+nimTitle	wrap	_._/src/misc/wrap.html	module src/misc/wrap		0
+nim	createJsonWrapper	_._/src/misc/wrap.html#createJsonWrapper,NimNode,NimNode	proc createJsonWrapper(def: NimNode; newName: NimNode): NimNode		7
+nim	serializeArgumentsToJson	_._/src/misc/wrap.html#serializeArgumentsToJson,NimNode,NimNode	proc serializeArgumentsToJson(def: NimNode; targetUiae: NimNode): (NimNode, NimNode)		79

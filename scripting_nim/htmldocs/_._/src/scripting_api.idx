@@ -1,4 +1,4 @@
-nimTitle	scripting_api	_._/src/scripting_api.html	module scripting_api		0
+nimTitle	scripting_api	_._/src/scripting_api.html	module src/scripting_api		0
 nim	EditorId	_._/src/scripting_api.html#EditorId	type EditorId		4
 nim	Text	_._/src/scripting_api.html#Text	EditorType.Text		5
 nim	Ast	_._/src/scripting_api.html#Ast	EditorType.Ast		5
@@ -50,6 +50,7 @@ nim	subtract	_._/src/scripting_api.html#subtract,Cursor,Selection	proc subtract(
 nim	subtract	_._/src/scripting_api.html#subtract,Selection,Selection	proc subtract(self: Selection; other: Selection): Selection		122
 nim	add	_._/src/scripting_api.html#add,Cursor,Selection	proc add(cursor: Cursor; selection: Selection): Cursor		125
 nim	add	_._/src/scripting_api.html#add,Selection,Selection	proc add(self: Selection; other: Selection): Selection		142
+nim	mergeLines	_._/src/scripting_api.html#mergeLines,Selections	proc mergeLines(selections: Selections): Selections		145
 nimgrp	contains	_._/src/scripting_api.html#contains-procs-all	proc		85
 nimgrp	$	_._/src/scripting_api.html#$-procs-all	proc		36
 nimgrp	add	_._/src/scripting_api.html#add-procs-all	proc		125

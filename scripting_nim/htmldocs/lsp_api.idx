@@ -1,0 +1,2 @@
+nimTitle	lsp_api	lsp_api.html	module scripting/lsp_api		0
+nim	lspLogVerbose	lsp_api.html#lspLogVerbose,bool	proc lspLogVerbose(val: bool)		13

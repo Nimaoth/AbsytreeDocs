@@ -1,4 +1,4 @@
-nimTitle	popup_selector_api	popup_selector_api.html	module popup_selector_api		0
+nimTitle	popup_selector_api	popup_selector_api.html	module scripting/popup_selector_api		0
 nim	accept	popup_selector_api.html#accept,SelectorPopup	proc accept(self: SelectorPopup)		13
 nim	cancel	popup_selector_api.html#cancel,SelectorPopup	proc cancel(self: SelectorPopup)		15
 nim	prev	popup_selector_api.html#prev,SelectorPopup	proc prev(self: SelectorPopup)		17

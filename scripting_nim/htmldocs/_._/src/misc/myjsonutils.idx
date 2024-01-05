@@ -1,0 +1,28 @@
+nimTitle	myjsonutils	_._/src/misc/myjsonutils.html	module src/misc/myjsonutils		0
+nim	Joptions	_._/src/misc/myjsonutils.html#Joptions	object Joptions		79
+nim	joptEnumOrd	_._/src/misc/myjsonutils.html#joptEnumOrd	EnumMode.joptEnumOrd		88
+nim	joptEnumSymbol	_._/src/misc/myjsonutils.html#joptEnumSymbol	EnumMode.joptEnumSymbol		88
+nim	joptEnumString	_._/src/misc/myjsonutils.html#joptEnumString	EnumMode.joptEnumString		88
+nim	EnumMode	_._/src/misc/myjsonutils.html#EnumMode	enum EnumMode		88
+nim	joptJsonNodeAsRef	_._/src/misc/myjsonutils.html#joptJsonNodeAsRef	JsonNodeMode.joptJsonNodeAsRef		92
+nim	joptJsonNodeAsCopy	_._/src/misc/myjsonutils.html#joptJsonNodeAsCopy	JsonNodeMode.joptJsonNodeAsCopy		92
+nim	joptJsonNodeAsObject	_._/src/misc/myjsonutils.html#joptJsonNodeAsObject	JsonNodeMode.joptJsonNodeAsObject		92
+nim	JsonNodeMode	_._/src/misc/myjsonutils.html#JsonNodeMode	enum JsonNodeMode		92
+nim	ToJsonOptions	_._/src/misc/myjsonutils.html#ToJsonOptions	object ToJsonOptions		96
+nim	initToJsonOptions	_._/src/misc/myjsonutils.html#initToJsonOptions	proc initToJsonOptions(): ToJsonOptions		101
+nim	fromJson	_._/src/misc/myjsonutils.html#fromJson,T,JsonNode	proc fromJson[T](a: var T; b: JsonNode; opt = Joptions())		212
+nim	jsonTo	_._/src/misc/myjsonutils.html#jsonTo,JsonNode,typedesc	proc jsonTo(b: JsonNode; T: typedesc; opt = Joptions()): T:type		318
+nim	toJson	_._/src/misc/myjsonutils.html#toJson,T	proc toJson[T](a: T; opt = initToJsonOptions()): JsonNode		322
+nim	fromJsonHook	_._/src/misc/myjsonutils.html#fromJsonHook,,JsonNode	proc fromJsonHook[K: string | cstring; V](t: var (Table[K, V] | OrderedTable[K, V]);\n                                     jsonNode: JsonNode; opt = Joptions())		371
+nim	toJsonHook	_._/src/misc/myjsonutils.html#toJsonHook	proc toJsonHook[K: string | cstring; V](t: (Table[K, V] | OrderedTable[K, V])): JsonNode		391
+nim	fromJsonHook	_._/src/misc/myjsonutils.html#fromJsonHook,SomeSet[A],JsonNode	proc fromJsonHook[A](s: var SomeSet[A]; jsonNode: JsonNode; opt = Joptions())		413
+nim	toJsonHook	_._/src/misc/myjsonutils.html#toJsonHook,SomeSet[A]	proc toJsonHook[A](s: SomeSet[A]): JsonNode		433
+nim	fromJsonHook	_._/src/misc/myjsonutils.html#fromJsonHook,Option[T],JsonNode	proc fromJsonHook[T](self: var Option[T]; jsonNode: JsonNode; opt = Joptions())		447
+nim	toJsonHook	_._/src/misc/myjsonutils.html#toJsonHook,Option[T]	proc toJsonHook[T](self: Option[T]): JsonNode		465
+nim	fromJsonHook	_._/src/misc/myjsonutils.html#fromJsonHook,StringTableRef,JsonNode	proc fromJsonHook(a: var StringTableRef; b: JsonNode; opt = Joptions())		482
+nim	toJsonHook	_._/src/misc/myjsonutils.html#toJsonHook,StringTableRef	proc toJsonHook(a: StringTableRef): JsonNode		500
+nim	fromJsonHook	_._/src/misc/myjsonutils.html#fromJsonHook,Uri,JsonNode	proc fromJsonHook(a: var Uri; b: JsonNode; opt = Joptions())		518
+nim	toJsonHook	_._/src/misc/myjsonutils.html#toJsonHook,Uri	proc toJsonHook(a: Uri): JsonNode		526
+nim	toJArray	_._/src/misc/myjsonutils.html#toJArray,openArray[JsonNode]	proc toJArray(arr: openArray[JsonNode]): JsonNode		534
+nimgrp	tojsonhook	_._/src/misc/myjsonutils.html#toJsonHook-procs-all	proc		391
+nimgrp	fromjsonhook	_._/src/misc/myjsonutils.html#fromJsonHook-procs-all	proc		371

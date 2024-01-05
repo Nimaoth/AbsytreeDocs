@@ -1,0 +1,38 @@
+nimTitle	util	_._/src/misc/util.html	module src/misc/util		0
+nim	getSome	_._/src/misc/util.html#getSome.t,Option[T],untyped	template getSome[T](opt: Option[T]; injected: untyped): bool		6
+nim	isNotNil	_._/src/misc/util.html#isNotNil.t,untyped	template isNotNil(v: untyped): untyped		9
+nim	isNotNil	_._/src/misc/util.html#isNotNil.t,untyped,untyped	template isNotNil(v: untyped; injected: untyped): bool		11
+nim	toOpenArray	_._/src/misc/util.html#toOpenArray.t,string	template toOpenArray(s: string): auto		14
+nim	getOr	_._/src/misc/util.html#getOr.t,Option[T],untyped	template getOr[T](opt: Option[T]; body: untyped): T		16
+nim	`??`	_._/src/misc/util.html#??,T,T	proc `??`[T: ref object](self: T; els: T): T		23
+nim	`.?`	_._/src/misc/util.html#.?.m,untyped,untyped	macro `.?`(self: untyped; value: untyped): untyped		26
+nim	del	_._/src/misc/util.html#del,seq[T],T	proc del[T](x: var seq[T]; val: T)		31
+nim	with	_._/src/misc/util.html#with.t,untyped,untyped,untyped	template with(exp, val, body: untyped): untyped		36
+nim	catch	_._/src/misc/util.html#catch.t,untyped,untyped	template catch(exp: untyped; then: untyped): untyped		44
+nim	catch	_._/src/misc/util.html#catch.t,untyped,untyped,untyped	template catch(exp: untyped; error: untyped; then: untyped): untyped		50
+nim	hasPrefix	_._/src/misc/util.html#hasPrefix.t,untyped,string,untyped	template hasPrefix(exp: untyped; prefix: string; v: untyped): untyped		56
+nim	myNormalizedPath	_._/src/misc/util.html#myNormalizedPath,string	proc myNormalizedPath(path: string): string		66
+nim	first	_._/src/misc/util.html#first.t,untyped	template first(x: untyped): untyped		74
+nim	last	_._/src/misc/util.html#last.t,untyped	template last(x: untyped): untyped		75
+nim	first=	_._/src/misc/util.html#first=,S,T	proc first=[S, T](x: var S; value: T)		76
+nim	last=	_._/src/misc/util.html#last=,S,T	proc last=[S, T](x: var S; value: T)		77
+nim	`or`	_._/src/misc/util.html#or,Option[T],Option[U]	proc `or`[T, U](a: Option[T]; b: Option[U]): Option[T]		79
+nim	`+`	_._/src/misc/util.html#+,Option[T],Option[U]	proc `+`[T, U](a: Option[T]; b: Option[U]): Option[T]		89
+nim	`-`	_._/src/misc/util.html#-,Option[T],Option[U]	proc `-`[T, U](a: Option[T]; b: Option[U]): Option[T]		99
+nim	someOption	_._/src/misc/util.html#someOption,T	proc someOption[T: not Option](self: T): Option[T]		109
+nim	someOption	_._/src/misc/util.html#someOption,T_2	proc someOption[T: Option](self: T): T		110
+nim	mapIt	_._/src/misc/util.html#mapIt.t,Option[T],untyped	template mapIt[T](self: Option[T]; op: untyped): untyped		112
+nim	maybeFlatten	_._/src/misc/util.html#maybeFlatten.t,Option[T]	template maybeFlatten[T](self: Option[T]): Option[T]		123
+nim	maybeFlatten	_._/src/misc/util.html#maybeFlatten.t,Option[Option[T]]	template maybeFlatten[T](self: Option[Option[T]]): Option[T]		124
+nim	neww	_._/src/misc/util.html#neww,T	proc neww[T](value: T): ref T		126
+nim	roundPositive	_._/src/misc/util.html#roundPositive,T	proc roundPositive[T: float64 | float32](x: T): T		136
+nim	yieldAll	_._/src/misc/util.html#yieldAll.t,untyped	template yieldAll(iter: untyped): untyped		138
+nim	resetOption	_._/src/misc/util.html#resetOption,Option[T]	proc resetOption[T](self: var Option[T])		142
+nim	safeIntCast	_._/src/misc/util.html#safeIntCast,T,typedesc[SomeUnsignedInt]	proc safeIntCast[T: SomeSignedInt](x: T; Target: typedesc[SomeUnsignedInt]): Target:type		149
+nim	align	_._/src/misc/util.html#align,T,T	proc align[T](address, alignment: T): T		170
+nim	CatchableAssertion	_._/src/misc/util.html#CatchableAssertion	object CatchableAssertion		177
+nim	softAssert	_._/src/misc/util.html#softAssert.t,bool,string	template softAssert(condition: bool; message: string): untyped		179
+nimgrp	someoption	_._/src/misc/util.html#someOption-procs-all	proc		109
+nimgrp	maybeflatten	_._/src/misc/util.html#maybeFlatten-templates-all	template		123
+nimgrp	isnotnil	_._/src/misc/util.html#isNotNil-templates-all	template		9
+nimgrp	catch	_._/src/misc/util.html#catch-templates-all	template		44

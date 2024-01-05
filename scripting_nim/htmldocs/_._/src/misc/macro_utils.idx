@@ -1,0 +1,15 @@
+nimTitle	macro_utils	_._/src/misc/macro_utils.html	module src/misc/macro_utils		0
+nim	getter	_._/src/misc/macro_utils.html#getter.t	template getter()		6
+nim	getPragmaNode	_._/src/misc/macro_utils.html#getPragmaNode,NimNode	proc getPragmaNode(node: NimNode): Option[NimNode]		8
+nim	myHasCustomPragma	_._/src/misc/macro_utils.html#myHasCustomPragma,NimNode,NimNode	proc myHasCustomPragma(n: NimNode; cp: NimNode): bool		13
+nim	generateGetters	_._/src/misc/macro_utils.html#generateGetters.m,typedesc	macro generateGetters(T: typedesc): untyped		22
+nim	argName	_._/src/misc/macro_utils.html#argName,NimNode,int	proc argName(def: NimNode; arg: int): NimNode		45
+nim	typeName	_._/src/misc/macro_utils.html#typeName,NimNode	proc typeName(def: NimNode): NimNode		50
+nim	hasCustomPragma	_._/src/misc/macro_utils.html#hasCustomPragma,NimNode,string	proc hasCustomPragma(def: NimNode; pragma: string): bool		62
+nim	argHasPragma	_._/src/misc/macro_utils.html#argHasPragma,NimNode,int,string	proc argHasPragma(def: NimNode; arg: int; pragma: string): bool		72
+nim	isVarargs	_._/src/misc/macro_utils.html#isVarargs,NimNode,int	proc isVarargs(def: NimNode; arg: int): bool		77
+nim	argType	_._/src/misc/macro_utils.html#argType,NimNode,int	proc argType(def: NimNode; arg: int): NimNode		78
+nim	argDefaultValue	_._/src/misc/macro_utils.html#argDefaultValue,NimNode,int	proc argDefaultValue(def: NimNode; arg: int): Option[NimNode]		79
+nim	returnType	_._/src/misc/macro_utils.html#returnType,NimNode	proc returnType(def: NimNode): Option[NimNode]		84
+nim	getDocumentation	_._/src/misc/macro_utils.html#getDocumentation,NimNode	proc getDocumentation(def: NimNode): Option[NimNode]		87
+nim	defineBitFlag	_._/src/misc/macro_utils.html#defineBitFlag.m,untyped	macro defineBitFlag(body: untyped): untyped		93

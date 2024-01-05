@@ -1,0 +1,12 @@
+nimTitle	timer	_._/src/misc/timer.html	module src/misc/timer		0
+nim	Seconds	_._/src/misc/timer.html#Seconds	type Seconds		6
+nim	`+`	_._/src/misc/timer.html#+,Seconds,Seconds	proc `+`(a, b: Seconds): Seconds		8
+nim	`+=`	_._/src/misc/timer.html#+=,Seconds,Seconds	proc `+=`(a: var Seconds; b: Seconds)		9
+nim	`-`	_._/src/misc/timer.html#-,Seconds,Seconds	proc `-`(a, b: Seconds): Seconds		10
+nim	ms	_._/src/misc/timer.html#ms,Seconds	proc ms(seconds: Seconds): float64		12
+nim	myGetTime	_._/src/misc/timer.html#myGetTime	proc myGetTime(): int32		45
+nim	myGetTicks	_._/src/misc/timer.html#myGetTicks	proc myGetTicks(): int64		46
+nim	mySubtractTicks	_._/src/misc/timer.html#mySubtractTicks,int64,int64	proc mySubtractTicks(a: int64; b: int64): int64		47
+nim	Timer	_._/src/misc/timer.html#Timer	object Timer		49
+nim	elapsed	_._/src/misc/timer.html#elapsed,Timer	proc elapsed(timer: Timer): Seconds		52
+nim	startTimer	_._/src/misc/timer.html#startTimer	proc startTimer(): Timer		53
